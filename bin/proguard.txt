@@ -1,0 +1,6 @@
+# view res/layout/activity_main.xml #generated:8
+-keep class com.tanqbay.targetshooter.DrawingSurface { <init>(...); }
+
+# view AndroidManifest.xml #generated:14
+-keep class com.tanqbay.targetshooter.MainActivity { <init>(...); }
+

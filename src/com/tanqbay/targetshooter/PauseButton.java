@@ -1,0 +1,111 @@
+package com.tanqbay.targetshooter;
+
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Typeface;
+import android.view.MotionEvent;
+
+public class PauseButton extends Item {
+	
+	private Paint paint;
+	private boolean Paused = false;
+	private double timePaused;
+	private double pauseLength = 0;
+	
+	public PauseButton(DrawingSurface drawingSurface){
+		super(drawingSurface);
+		
+		paint = new Paint();
+		
+		paint.setTextSize(20);
+		paint.setTypeface(Typeface.create(Typeface.DEFAULT,Typeface.BOLD));
+		
+		paint.setColor(0xff00ff00);
+		paint.setAntiAlias(true);
+	}
+	
+	
+	public void drawSelf(Canvas canvas){
+		String pauseMessage = "";
+		
+		
+		pauseMessage = "Pause";
+		
+		paint.setTextSize(20);
+		paint.setColor(0xff000099);
+		
+		float textWidth = paint.measureText(pauseMessage);
+		
+		float startX = drawingSurface.getWidth() - textWidth;
+		
+		canvas.drawText(pauseMessage,startX,30,paint);
+		
+		if(Paused){
+			paint.setColor(0xaa000000);
+			canvas.drawPaint(paint);
+			
+			paint.setTextSize(30);
+			paint.setColor(0xff000099);
+			
+			String message = "Paused";
+			
+			textWidth = paint.measureText(message);
+			
+			startX = (drawingSurface.getWidth() / 2) - (textWidth / 2);
+			float startY = drawingSurface.getHeight() / 2;
+			
+			canvas.drawText(message,startX,startY,paint);
+		}
+	}
+	
+	public void update(double timeDifference){
+		if(Paused){
+			pauseLength = pauseLength + timeDifference;
+		}else{
+			pauseLength = 0;
+		}
+	}
+	
+	public void handleTouchEvent(MotionEvent event){
+		int Index = event.getActionIndex();
+		
+		float XCoord = event.getX(Index);
+		float YCoord = event.getY(Index);
+		
+		if(event.getActionMasked() == MotionEvent.ACTION_DOWN || event.getActionMasked() == MotionEvent.ACTION_POINTER_DOWN){
+			if(!Paused){
+				if(XCoord > drawingSurface.getWidth() - (drawingSurface.getWidth() / 5) && YCoord < drawingSurface.getHeight() / 10){
+					togglePause();
+				}
+			}else{
+				togglePause();
+			}
+		}
+	}
+	
+	public void togglePause(){
+		if(Paused){
+			UnPauseGame();
+		}else{
+			PauseGame();
+		}
+	}
+	
+	public void PauseGame(){
+		Paused = true;
+		//timePaused = System.currentTimeMillis();
+	}
+	
+	public void UnPauseGame(){
+		Paused = false;
+		//pauseLength = System.currentTimeMillis() - timePaused;
+	}
+	
+	public boolean getPaused(){
+		return Paused;
+	}
+	
+	public double getPauseLength(){
+		return pauseLength;
+	}
+}
