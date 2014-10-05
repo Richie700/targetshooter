@@ -14,6 +14,8 @@ public class DisplayContainer extends Item {
 	public DisplayContainer(DrawingSurface drawingSurface) {
 		super(drawingSurface);
 		
+		drawOrder = 100;
+		
 		score = new Score(drawingSurface);
 		//drawingSurface.getItems().add(score);
 		

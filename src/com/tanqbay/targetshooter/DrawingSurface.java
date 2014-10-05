@@ -2,6 +2,7 @@ package com.tanqbay.targetshooter;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Collections;
 
 import android.app.Activity;
 import android.content.Context;
@@ -171,6 +172,8 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 		if(NumberOfTargets > lowestNumberOfTargets && rand.nextFloat() > 0.95){
 			NumberOfTargets--;
 		}
+		
+		Collections.sort(items);
 	}
 	
 	@Override
