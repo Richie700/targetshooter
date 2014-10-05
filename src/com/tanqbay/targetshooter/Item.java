@@ -65,7 +65,7 @@ public class Item implements Comparable {
 	}
 	
 	 @Override
-  public int compareTo(Item item) {
+  public int compareTo(Object item) {
         return new Integer(drawOrder).compareTo(new Integer(item.getDrawOrder()));
   }
 }
