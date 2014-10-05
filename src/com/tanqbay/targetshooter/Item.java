@@ -3,7 +3,7 @@ package com.tanqbay.targetshooter;
 
 import android.graphics.Canvas;
 
-public class Item implements Comparable {
+public class Item implements Comparable<Item> {
 	
 	public static final int GUN_TYPE = 1;
 	public static final int TARGET_TYPE = 2;
@@ -65,7 +65,7 @@ public class Item implements Comparable {
 	}
 	
 	 @Override
-  public int compareTo(Object item) {
+  public int compareTo(Item item) {
         return new Integer(drawOrder).compareTo(new Integer(item.getDrawOrder()));
   }
 }
