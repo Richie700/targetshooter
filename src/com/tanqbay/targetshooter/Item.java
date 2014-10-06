@@ -85,7 +85,7 @@ public class Item implements Comparable<Item>,Parcelable {
              return new Item(in);
          }
 
-         public Item[] new Array(int size) {
+         public Item[] newArray(int size) {
              return new Item[size];
          }
      };
