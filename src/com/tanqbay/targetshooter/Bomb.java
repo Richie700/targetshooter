@@ -27,11 +27,11 @@ public class Bomb extends Target {
 		
 	}
 	
-	public void update(double timeDifference){
+	public void update(double timeDifference,DrawingSurface drawingSurface){
 		
 		Velocity[1] = 75;
 		
-		super.update(timeDifference);
+		super.update(timeDifference,drawingSurface);
 		
 	}
 	

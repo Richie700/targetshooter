@@ -37,7 +37,7 @@ public class LaserBeam extends Item {
 		paint.setAntiAlias(true);
 	}
 	
-	public void update(double timeDifference){
+	public void update(double timeDifference,DrawingSurface drawingSurface){
 		if(!drawingSurface.getPaused() && !hitTarget() && !reachedLimit()){
 			
 			length =  actualLength * ((currentStart[1])/start[1]);

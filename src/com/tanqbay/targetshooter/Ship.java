@@ -79,8 +79,8 @@ public class Ship extends SmartTarget {
 		}
 	}
 	
-	public void update(double timeDifference){
-		super.update(timeDifference);
+	public void update(double timeDifference,DrawingSurface drawingSurface){
+		super.update(timeDifference,drawingSurface);
 		
 	}
 	

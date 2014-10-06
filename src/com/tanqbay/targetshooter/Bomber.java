@@ -57,8 +57,8 @@ public class Bomber extends Ship {
 		}
 	}
 	
-	public void update(double timeDifference){
-		super.update(timeDifference);
+	public void update(double timeDifferenceDrawingSurface drawingSurface){
+		super.update(timeDifference,drawingSurface);
 		
 		if(!drawingSurface.getPaused()){
 			timeSinceLastDrop += timeDifference;
@@ -77,7 +77,7 @@ public class Bomber extends Ship {
 		destinationRotation = (float) 0;
 	}
 	
-	protected void calculateDestination(){
+	protected void calculateDestination(DrawingSurface drawingSurface){
 		
 		if(bombs.size() > 0){
 			super.calculateDestination();

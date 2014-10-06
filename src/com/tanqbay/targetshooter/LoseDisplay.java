@@ -9,6 +9,7 @@ public class LoseDisplay extends Item {
 	private Paint paint;
 	private Boolean newHighScoreReached;
 	private int currentHighScore;
+	private int hits = 0;
 
 	public LoseDisplay(DrawingSurface drawingSurface,Boolean newHighScoreReached, int currentHighScore) {
 		super(drawingSurface);
@@ -41,8 +42,8 @@ public class LoseDisplay extends Item {
 		
 		float textWidth = paint.measureText(message);
 		
-		float startX = (drawingSurface.getWidth() / 2) - (textWidth / 2);
-		float startY = drawingSurface.getHeight() / 2;
+		float startX = (surfaceWidth / 2) - (textWidth / 2);
+		float startY = surfaceHeight / 2;
 		
 		canvas.drawText(message,startX,startY,paint);
 		
@@ -51,7 +52,7 @@ public class LoseDisplay extends Item {
 			
 			textWidth = paint.measureText(highScoreMessage);
 			
-			startX = (drawingSurface.getWidth() / 2) - (textWidth / 2);
+			startX = (surfaceWidth / 2) - (textWidth / 2);
 			startY = startY + 50;
 			
 			canvas.drawText(highScoreMessage,startX,startY,paint);
@@ -60,21 +61,25 @@ public class LoseDisplay extends Item {
 			
 			textWidth = paint.measureText(highScoreMessage);
 			
-			startX = (drawingSurface.getWidth() / 2) - (textWidth / 2);
+			startX = (surfaceWidth / 2) - (textWidth / 2);
 			startY = startY + 50;
 			
 			canvas.drawText(highScoreMessage,startX,startY,paint);
 			
-			String yourScoreMessage = "Your Score: " + String.valueOf(drawingSurface.getHits());
+			String yourScoreMessage = "Your Score: " + String.valueOf(hits);
 			
 			textWidth = paint.measureText(yourScoreMessage);
 			
-			startX = (drawingSurface.getWidth() / 2) - (textWidth / 2);
+			startX = (surfaceWidth / 2) - (textWidth / 2);
 			startY = startY + 50;
 			
 			canvas.drawText(yourScoreMessage,startX,startY,paint);
 		}
 		
+	}
+	
+	public void update(double timeDifference,DrawingSurface drawingSurface){
+		hits = drawingSurface.getHits();
 	}
 	
 }

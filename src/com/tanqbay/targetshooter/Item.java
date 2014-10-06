@@ -11,9 +11,12 @@ public class Item implements Comparable<Item>,Parcelable {
 	
 	protected boolean readyToBeRemoved = false;
 	protected int drawOrder = 0;
+ protected double surfaceWidth;
+	protected double surfaceHeight;
 	
 	public Item(DrawingSurface drawingSurface){
-		
+		surfaceWidth = drawingSurface.getWidth();
+		surfaceHeight = drawingSurface.getHeight();
 	}
 	
 	public void drawSelf(Canvas canvas){

@@ -24,9 +24,9 @@ public class Score extends Item {
 	}
 	
 	public void drawSelf(Canvas canvas){
-		double leftCenter = drawingSurface.getWidth() / 6.0;
-		double center = drawingSurface.getWidth() / 2.0;
-		double rightCenter = drawingSurface.getWidth() * (5.0/6.0);
+		double leftCenter = surfaceWidth / 6.0;
+		double center = surfaceWidth / 2.0;
+		double rightCenter = surfaceWidth * (5.0/6.0);
 		
 		paint.setTextSize(20);
 		paint.setColor(0xff000099);
@@ -36,7 +36,7 @@ public class Score extends Item {
 		canvas.drawText(hitLabel,(float) (hitLabelStart),lineHeight,paint);
 		
 		paint.setTextSize(25);
-		String hitAmount = String.valueOf(drawingSurface.getHits());
+		String hitAmount = String.valueOf(surfaceHits);
 		double hitAmountWidth = paint.measureText(hitAmount);
 		double hitAmountStart = leftCenter - (hitAmountWidth / 2.0);
 		

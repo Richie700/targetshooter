@@ -15,19 +15,23 @@ public class City extends Item {
 	private double shieldStrength = 100;
 	private double shieldRegeneration = 0.5;
 	private Bitmap planetImage;
+	private double planetRadius;
+	
 	
 	public City(DrawingSurface drawingSurface) {
 		super(drawingSurface);
-		
+				
 		paint = new Paint();
 		//paint.setStrokeWidth(7);
 		//paint.setStrokeCap(Paint.Cap.ROUND);
 		paint.setAntiAlias(true);
 		paint.setColor(0xaaddddff);
 		
-		shieldPosition = drawingSurface.getHeight() * (7.0/8.0);
+		shieldPosition = surfaceHeight * (7.0/8.0);
 		
-		planetPosition = shieldPosition + drawingSurface.getHeight() * (1.0/12.0);
+		planetRadius = surfaceWidth * 2.0;
+		
+		planetPosition = shieldPosition + surfaceHeight() * (1.0/12.0);
 		
 		planetImage = BitmapFactory.decodeResource(drawingSurface.getContext().getResources(),R.drawable.planet);
 	}
@@ -35,22 +39,12 @@ public class City extends Item {
 	
 	public void drawSelf(Canvas canvas){ 
 		
-		/*RectF planetBounds = new RectF((float) -(drawingSurface.getWidth() * (1.0/4.0)),
-				(float) (planetPosition),
-				(float) (drawingSurface.getWidth() * (5.0/4.0)),
-				(float) (drawingSurface.getHeight() * (9.0/8.0)));*/
-		
-		//paint.setColor(0xff00bb55);
-		//canvas.drawArc(planetBounds,180,180,true,paint);
-		
-		double planetRadius = drawingSurface.getWidth() * 2.0;
-		
-		RectF rect = new RectF((float) ((drawingSurface.getWidth() / 2.0) - planetRadius),(float) -planetRadius,(float) ((drawingSurface.getWidth() / 2.0) + planetRadius),(float) planetRadius);
+		RectF rect = new RectF((float) ((surfaceWidth / 2.0) - planetRadius),(float) -planetRadius,(float) ((surfaceWidth / 2.0) + planetRadius),(float) planetRadius);
 		
 		Rect sourceRect = new Rect(0,0,planetImage.getWidth(),planetImage.getHeight());
 		
 		canvas.save(Canvas.MATRIX_SAVE_FLAG);
-		canvas.translate(0,drawingSurface.getHeight() + (float) (drawingSurface.getWidth() * 1.85));
+		canvas.translate(0,surfaceHeight + (float) (surfaceWidth() * 1.85));
 		
 		
 		canvas.drawBitmap(planetImage,sourceRect,rect,new Paint());
@@ -58,10 +52,10 @@ public class City extends Item {
 		canvas.restore();
 		
 		
-		RectF shieldBounds = new RectF((float) -(drawingSurface.getWidth() * (1.0/4.0)),
+		RectF shieldBounds = new RectF((float) -(surfaceWidth * (1.0/4.0)),
 										(float) (shieldPosition),
-										(float) (drawingSurface.getWidth() * (5.0/4.0)),
-										(float) (drawingSurface.getHeight() * (9.0/8.0)));
+										(float) (surfaceWidth * (5.0/4.0)),
+										(float) (surfaceHeight * (9.0/8.0)));
 		
 		paint.setColor(0xaaddddff);
 		
@@ -73,7 +67,7 @@ public class City extends Item {
 		
 	}
 	
-	public void update(double timeDifference){
+	public void update(double timeDifference,DrawingSurface drawingSurface){
 		if(!drawingSurface.getPauseButton().getPaused()){
 			shieldStrength += shieldRegeneration * timeDifference;
 			

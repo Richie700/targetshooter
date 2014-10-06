@@ -36,7 +36,7 @@ public class PauseButton extends Item {
 		
 		float textWidth = paint.measureText(pauseMessage);
 		
-		float startX = drawingSurface.getWidth() - textWidth;
+		float startX = surfaceWidth - textWidth;
 		
 		canvas.drawText(pauseMessage,startX,30,paint);
 		
@@ -51,14 +51,14 @@ public class PauseButton extends Item {
 			
 			textWidth = paint.measureText(message);
 			
-			startX = (drawingSurface.getWidth() / 2) - (textWidth / 2);
-			float startY = drawingSurface.getHeight() / 2;
+			startX = (surfaceWidth / 2) - (textWidth / 2);
+			float startY = surfaceHeight / 2;
 			
 			canvas.drawText(message,startX,startY,paint);
 		}
 	}
 	
-	public void update(double timeDifference){
+	public void update(double timeDifference,DrawingSurface drawingSurface){
 		if(Paused){
 			pauseLength = pauseLength + timeDifference;
 		}else{
@@ -74,7 +74,7 @@ public class PauseButton extends Item {
 		
 		if(event.getActionMasked() == MotionEvent.ACTION_DOWN || event.getActionMasked() == MotionEvent.ACTION_POINTER_DOWN){
 			if(!Paused){
-				if(XCoord > drawingSurface.getWidth() - (drawingSurface.getWidth() / 5) && YCoord < drawingSurface.getHeight() / 10){
+				if(XCoord > surfaceWidth - (surfaceWidth / 5) && YCoord < surfaceHeight / 10){
 					togglePause();
 				}
 			}else{
