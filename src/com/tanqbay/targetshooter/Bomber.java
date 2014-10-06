@@ -20,13 +20,13 @@ public class Bomber extends Ship {
 		numberOfBombs = 3;
 		timeSinceLastDrop = 0;
 		
-		reloadBombs();
+		reloadBombs(drawingSurface);
 		
 		shipImage = BitmapFactory.decodeResource(drawingSurface.getContext().getResources(),R.drawable.bomber1);
 		radius = 35;
 	}
 	
-	private void reloadBombs(){
+	private void reloadBombs(DrawingSurface drawingSurface){
 		if(bombs.size() == 0){
 			for(int i = 1;i <= numberOfBombs;i++){
 				bombs.add(new Bomb(drawingSurface));
@@ -67,7 +67,7 @@ public class Bomber extends Ship {
 		//calculateDestination();
 		
 		if(Position[1] < 0 - distanceToBombReload){
-			reloadBombs();
+			reloadBombs(drawingSurface);
 		}
 		
 		

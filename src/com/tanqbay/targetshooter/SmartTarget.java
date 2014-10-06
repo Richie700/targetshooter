@@ -77,7 +77,7 @@ public class SmartTarget extends Target {
 		
 		avoidGunBarrel(drawingSurface);
 		
-		avoidLasers();
+		avoidLasers(drawingSurface);
 		
 	}
 	
@@ -149,10 +149,10 @@ public class SmartTarget extends Target {
 		}
 	}*/
 	
-	private void avoidLasers(){
+	private void avoidLasers(DrawingSurface drawingSurface){
 		ArrayList<LaserBeam> lasers = drawingSurface.getGun().getLasers();
 		
-		double shortestDistance = drawingSurface.getHeight();
+		double shortestDistance = surfaceHeight;
 		
 		//Log.i("Lasers",String.valueOf(lasers.size()));
 		
@@ -160,7 +160,7 @@ public class SmartTarget extends Target {
 			LaserBeam laser;
 			double[] end;
 			double laserAngle;
-			double dtl = drawingSurface.getHeight();
+			double dtl = surfaceHeight;
 			
 			for(int i = 0;i < lasers.size();i++){
 				try{
