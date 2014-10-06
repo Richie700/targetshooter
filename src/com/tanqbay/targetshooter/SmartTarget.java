@@ -71,17 +71,17 @@ public class SmartTarget extends Target {
 		}
 	}
 	
-	protected void calculateDestination(){
+	protected void calculateDestination(DrawingSurface drawingSurface){
 		
-		Destination = new float[]{Position[0],drawingSurface.getHeight() + radius};
+		Destination = new float[]{Position[0],surfaceHeight + radius};
 		
-		avoidGunBarrel();
+		avoidGunBarrel(drawingSurface);
 		
 		avoidLasers();
 		
 	}
 	
-	private void avoidGunBarrel(){
+	private void avoidGunBarrel(DrawingSurface drawingSurface){
 		if(drawingSurface.getGun() != null && Position[1] < drawingSurface.getGun().getPivot()[1]){
 			double[] barrelEnd = drawingSurface.getGun().getBarrelPosition();
 			double gunAngle = -drawingSurface.getGun().getAngle();
@@ -129,7 +129,7 @@ public class SmartTarget extends Target {
 	protected void avoidCollision(Item item){
 		//if(item.getType() != LASERBEAM_TYPE){
 			if(item.getPosition()[0] < getPosition()[0]){
-				Destination = new float[]{drawingSurface.getWidth(),getPosition()[1]};
+				Destination = new float[]{surfaceWidth,getPosition()[1]};
 			}else{
 				Destination = new float[]{0,getPosition()[1]};
 			}

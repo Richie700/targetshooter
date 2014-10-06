@@ -241,7 +241,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 			
 			for(int i = items.size() - 1;i >= 0;i--){
 				try{
-					items.get(i).update(timeDifference);
+					items.get(i).update(timeDifference,this);
 					//Log.i("Type",String.valueOf(items.get(i).getType()));
 					
 					if(items.get(i).isReadyToBeRemoved()){
