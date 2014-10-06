@@ -14,7 +14,14 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
+						 @Override
+					public void onSaveInstanceState(Bundle savedInstanceState) {
+					    // Save the user's current game state
+					    //savedInstanceState
+					    
+					    // Always call the superclass so it can save the view hierarchy state
+					    super.onSaveInstanceState(savedInstanceState);
+					}
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_main, menu);

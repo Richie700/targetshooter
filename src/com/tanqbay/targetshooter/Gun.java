@@ -32,7 +32,7 @@ public class Gun extends Item {
 	private Bitmap gun;
 	
 	public Gun(DrawingSurface drawingSurface){
-		super(drawingSurface);
+		super();
 		
 		Pivot = new float[]{drawingSurface.getWidth() / 2, (float) (drawingSurface.getHeight() * (3.0/4.0))};
 		length = drawingSurface.getHeight() / 5.0;
@@ -106,7 +106,7 @@ public class Gun extends Item {
 		}
 	}*/
 	
-	public void update(double timeDifference){
+	public void update(double timeDifference,DrawingSurface drawingSurface){
 		
 		//Log.i("Lasers",String.valueOf(lasers.size()));
 		
@@ -126,7 +126,7 @@ public class Gun extends Item {
 		}
 	}
 	
-	public void handleTouchEvent(MotionEvent event){
+	public void handleTouchEvent(MotionEvent event,DrawingSurface drawingSurface){
 		int Index = event.getActionIndex();
 		
 		float XCoord = event.getX(Index);
@@ -136,7 +136,7 @@ public class Gun extends Item {
 			if(YCoord > drawingSurface.getHeight() / 6.0 
 				//&& (XCoord > drawingSurface.getWidth() * (4.0/5.0) || XCoord < drawingSurface.getWidth() * (1.0/5.0))
 				&& (event.getActionMasked() == MotionEvent.ACTION_DOWN || event.getActionMasked() == MotionEvent.ACTION_POINTER_DOWN)){
-				fire();
+				fire(drawingSurface);
 			}
 			
 			if(event.getActionMasked() == MotionEvent.ACTION_MOVE){

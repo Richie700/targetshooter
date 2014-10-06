@@ -3,25 +3,24 @@ package com.tanqbay.targetshooter;
 
 import android.graphics.Canvas;
 
-public class Item implements Comparable<Item> {
+public class Item implements Comparable<Item>,Parcelable {
 	
 	public static final int GUN_TYPE = 1;
 	public static final int TARGET_TYPE = 2;
 	public static final int LASERBEAM_TYPE = 3;
 	
-	protected DrawingSurface drawingSurface;
 	protected boolean readyToBeRemoved = false;
 	protected int drawOrder = 0;
 	
 	public Item(DrawingSurface drawingSurface){
-		this.drawingSurface = drawingSurface;
+		
 	}
 	
 	public void drawSelf(Canvas canvas){
 		
 	}
 	
-	public void update(double timeDifference){
+	public void update(double timeDifference,DrawingSurface drawingSurface){
 		
 	}
 	
@@ -68,4 +67,27 @@ public class Item implements Comparable<Item> {
   public int compareTo(Item item) {
         return new Integer(drawOrder).compareTo(new Integer(item.getDrawOrder()));
   }
+  
+  public int describeContents() {
+         return 0;
+     }
+
+     public void writeToParcel(Parcel out, int flags) {
+         out.writeInt(mData);
+     }
+
+     public static final Parcelable.Creator<Item> CREATOR
+             = new Parcelable.Creator<Item>() {
+         public Item createFromParcel(Parcel in) {
+             return new Item(in);
+         }
+
+         public Item[] new Array(int size) {
+             return new Item[size];
+         }
+     };
+     
+     private Item(Parcel in) {
+         mData = in.readInt();
+     }
 }

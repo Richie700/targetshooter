@@ -24,7 +24,7 @@ import android.widget.LinearLayout.LayoutParams;
 /*
  * To Do List:
  * Save state when exiting and reload when coming back
- * Save high score
+ * --Save high score
  * Add graphics
  * 		2 kinds of ships
  * 		bombs

@@ -49,7 +49,7 @@ public class Target extends Item {
 	
 	
 	
-	public void update(double timeDifference){
+	public void update(double timeDifference,DrawingSurface drawingSurface){
 		//Position[1] = Position[1] + (speed * (float) timeDifference);
 		
 		//radius = actualRadius * ((Position[1] - startY)/surfaceHeight);
@@ -58,7 +58,7 @@ public class Target extends Item {
 		
 		if(!drawingSurface.getPaused()){
 			
-			DetectCollisions();
+			DetectCollisions(drawingSurface);
 			
 			float distanceToDestination = (float) distance(Position[0],Position[1],Destination[0],Destination[1]);
 			
@@ -92,13 +92,13 @@ public class Target extends Item {
 			
 			
 			if(Position[1] > drawingSurface.getCity().getShieldPosition()){
-				setReachedBottom();
+				setReachedBottom(drawingSurface);
 				setReadyToBeRemoved(true);
 			}
 		}
 	}
 	
-	protected void DetectCollisions(){
+	protected void DetectCollisions( DrawingSurface drawingSurface ){
 		for(int i = 0;i < drawingSurface.getItems().size();i++){
 			Item item = drawingSurface.getItems().get(i);
 			if(collisionDetected(item)){
@@ -160,7 +160,7 @@ public class Target extends Item {
 		return hit;
 	}
 	
-	public void setReachedBottom(){
+	public void setReachedBottom(DrawingSurface drawingSurface){
 		reachedBottom = true;
 		drawingSurface.getCity().reduceShield(10);
 	}
