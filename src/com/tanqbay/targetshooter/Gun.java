@@ -184,7 +184,7 @@ public class Gun extends Item {
 		}
 	}
 	
-	public void fire(){
+	public void fire(DrawingSurface drawingSurface){
 		if(timeSinceLastShot >= rateOfFire){
 			LaserBeam laser = new LaserBeam(getBarrelPosition(),laserSpeed,-angle,drawingSurface);
 			lasers.add(laser);

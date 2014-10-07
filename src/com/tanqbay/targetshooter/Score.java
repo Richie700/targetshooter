@@ -10,6 +10,7 @@ public class Score extends Item {
 	private Paint paint;
 	private float lineHeight = 30;
 	private double shieldStrength = 0;
+	private int hits = 0;
 	
 	public Score(DrawingSurface drawingSurface){
 		super(drawingSurface);
@@ -37,7 +38,7 @@ public class Score extends Item {
 		canvas.drawText(hitLabel,(float) (hitLabelStart),lineHeight,paint);
 		
 		paint.setTextSize(25);
-		String hitAmount = String.valueOf(surfaceHits);
+		String hitAmount = String.valueOf(hits);
 		double hitAmountWidth = paint.measureText(hitAmount);
 		double hitAmountStart = leftCenter - (hitAmountWidth / 2.0);
 		
@@ -69,6 +70,8 @@ public class Score extends Item {
 	public void update(double timeDifference,DrawingSurface drawingSurface){
 	
 		shieldStrength = drawingSurface.getCity().getShieldStrength();
+		hits = drawingSurface.getHits();
+		
 	}
 	
 }

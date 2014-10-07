@@ -31,7 +31,7 @@ public class City extends Item {
 		
 		planetRadius = surfaceWidth * 2.0;
 		
-		planetPosition = shieldPosition + surfaceHeight() * (1.0/12.0);
+		planetPosition = shieldPosition + surfaceHeight * (1.0/12.0);
 		
 		planetImage = BitmapFactory.decodeResource(drawingSurface.getContext().getResources(),R.drawable.planet);
 	}
@@ -44,7 +44,7 @@ public class City extends Item {
 		Rect sourceRect = new Rect(0,0,planetImage.getWidth(),planetImage.getHeight());
 		
 		canvas.save(Canvas.MATRIX_SAVE_FLAG);
-		canvas.translate(0,surfaceHeight + (float) (surfaceWidth() * 1.85));
+		canvas.translate(0,surfaceHeight + (float) (surfaceWidth * 1.85));
 		
 		
 		canvas.drawBitmap(planetImage,sourceRect,rect,new Paint());
