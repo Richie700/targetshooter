@@ -32,7 +32,7 @@ public class Gun extends Item {
 	private Bitmap gun;
 	
 	public Gun(DrawingSurface drawingSurface){
-		super();
+		super(drawingSurface);
 		
 		Pivot = new float[]{drawingSurface.getWidth() / 2, (float) (drawingSurface.getHeight() * (3.0/4.0))};
 		length = drawingSurface.getHeight() / 5.0;

@@ -352,7 +352,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 			float XCoord = event.getX(Index);
 			float YCoord = event.getY(Index);
 			
-			gun.handleTouchEvent(event);
+			gun.handleTouchEvent(event,this);
 			
 			displayContainer.getPauseButton().handleTouchEvent(event);
 			

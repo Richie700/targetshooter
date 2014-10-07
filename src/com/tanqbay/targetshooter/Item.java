@@ -76,7 +76,7 @@ public class Item implements Comparable<Item>,Parcelable {
      }
 
      public void writeToParcel(Parcel out, int flags) {
-         out.writeInt(mData);
+         //out.writeInt(mData);
      }
 
      public static final Parcelable.Creator<Item> CREATOR
@@ -91,6 +91,6 @@ public class Item implements Comparable<Item>,Parcelable {
      };
      
      private Item(Parcel in) {
-         mData = in.readInt();
+         //mData = in.readInt();
      }
 }
