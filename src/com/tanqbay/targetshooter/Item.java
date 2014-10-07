@@ -2,6 +2,8 @@ package com.tanqbay.targetshooter;
 
 
 import android.graphics.Canvas;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 public class Item implements Comparable<Item>,Parcelable {
 	
