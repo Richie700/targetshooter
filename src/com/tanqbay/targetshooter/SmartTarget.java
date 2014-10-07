@@ -34,15 +34,15 @@ public class SmartTarget extends Target {
 	}
 	
 	
-	public void update(double timeDifference){
-		super.update(timeDifference);
+	public void update(double timeDifference,DrawingSurface drawingSurface){
+		super.update(timeDifference,drawingSurface);
 		//Log.i("rotation",String.valueOf(rotation));
 		//Log.i("destinationRotation",String.valueOf(destinationRotation));
 		if(!drawingSurface.getPaused()){
 			
 			calculateDestinationRotation();
 			
-			calculateDestination();
+			calculateDestination(drawingSurface);
 			
 			if(Math.abs(rotation - destinationRotation) > Epsilon){
 				if(destinationRotation > rotation){

@@ -9,6 +9,7 @@ public class Score extends Item {
 	//private double shieldStrength = 100;
 	private Paint paint;
 	private float lineHeight = 30;
+	private double shieldStrength = 0;
 	
 	public Score(DrawingSurface drawingSurface){
 		super(drawingSurface);
@@ -60,9 +61,14 @@ public class Score extends Item {
 		
 		paint.setColor(0xff000099);
 		paint.setStrokeWidth(lineHeight);
-		canvas.drawLine((float) shieldStrengthLabelStart,(float) (lineHeight * 2.0),(float) ((drawingSurface.getCity().getShieldStrength() / 100) * shieldStrengthLabelWidth + shieldStrengthLabelStart),(float) (float) (lineHeight * 2.0),paint);
+		canvas.drawLine((float) shieldStrengthLabelStart,(float) (lineHeight * 2.0),(float) ((shieldStrength / 100) * shieldStrengthLabelWidth + shieldStrengthLabelStart),(float) (float) (lineHeight * 2.0),paint);
 		
 		
+	}
+	
+	public void update(double timeDifference,DrawingSurface drawingSurface){
+	
+		shieldStrength = drawingSurface.getCity().getShieldStrength();
 	}
 	
 }
