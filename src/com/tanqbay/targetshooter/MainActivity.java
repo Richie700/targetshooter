@@ -41,7 +41,7 @@ public class MainActivity extends Activity {
     }
     
     public void onStop(){
-    	super.onPause();
+    	super.onStop();
     	LinearLayout MC = (LinearLayout) findViewById(R.id.MainContainer);
     	
     	MC.removeViewAt(0);
