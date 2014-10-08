@@ -13,8 +13,13 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        if(savedInstanceState != null){
+        		restoreFromBundle(savedInstanceState);
+        }
     }
-						 @Override
+					
+					@Override
 					public void onSaveInstanceState(Bundle savedInstanceState) {
 					    // Save the user's current game state
 					    //savedInstanceState
@@ -22,6 +27,13 @@ public class MainActivity extends Activity {
 					    // Always call the superclass so it can save the view hierarchy state
 					    super.onSaveInstanceState(savedInstanceState);
 					}
+					
+					
+					private void restoreFromBundle(Bundle savedInstanceState){
+							DrawingSurface drawingSurface = (DrawingSurface) findViewById(R.id.MainDrawingSurface);
+					}
+					
+					
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_main, menu);
