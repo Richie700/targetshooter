@@ -35,6 +35,11 @@ public class DisplayContainer extends Item {
 		pauseButton.drawSelf(canvas);
 	}
 	
+	public void update(double timeDifference,DrawingSurface drawingSurface){
+		score.update(timeDifference,drawingSurface);
+		pauseButton.update(timeDifference,drawingSurface);
+	}
+	
 	public PauseButton getPauseButton(){
 		return pauseButton;
 	}
