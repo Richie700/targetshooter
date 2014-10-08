@@ -14,9 +14,9 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        if(savedInstanceState != null){
+        /*if(savedInstanceState != null){
         		restoreFromBundle(savedInstanceState);
-        }
+        }*/
     }
 					
 					@Override
@@ -42,9 +42,9 @@ public class MainActivity extends Activity {
     
     public void onStop(){
     	super.onStop();
-    	LinearLayout MC = (LinearLayout) findViewById(R.id.MainContainer);
+    	//LinearLayout MC = (LinearLayout) findViewById(R.id.MainContainer);
     	
-    	MC.removeViewAt(0);
+    	//MC.removeViewAt(0);
     }
     
 }
