@@ -42,9 +42,11 @@ public class MainActivity extends Activity {
     
     public void onStop(){
     	super.onStop();
-    	//LinearLayout MC = (LinearLayout) findViewById(R.id.MainContainer);
     	
-    	//MC.removeViewAt(0);
+    	DrawingSurface drawingSurface = (DrawingSurface) findViewById(R.id.MainDrawingSurface);
+    	LinearLayout MC = (LinearLayout) findViewById(R.id.MainContainer);
+    	
+    	MC.removeViewAt(0);
     }
     
 }
