@@ -92,8 +92,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 	}
 	
 	@Override
-	public void surfaceChanged(SurfaceHolder holder, int format, int width,
-			int height) {
+	public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
 		
 		Log.i("Changed","Changed");
 		
@@ -116,6 +115,10 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 	
 	private void setupGame(){
 		
+		if(this.thread != null){
+			this.thread.setRunning(false);
+		}
+				
 		FinishedFrame = 0;
 		hits = 0;
 		
@@ -152,9 +155,6 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 	
 	private void addTarget(){
 		
-		//Target target = new Target((float) surfaceWidth,(float) surfaceHeight);
-		
-		//items.add(target);
 		
 		if(rand.nextFloat() < 0.8){
 			Ship ship = new Ship(this);
@@ -210,19 +210,6 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 			
 			canvas.drawBitmap(background,sourceRect,rect,new Paint());
 			
-			/*if(Finished){
-				if(FinishedFrame < 200){
-					
-					
-					FinishedFrame++;
-					
-				}else{
-					Finished = false;
-					setupGame();
-					displayContainer.getPauseButton().PauseGame();
-				}
-			}*/
-			
 			// Draw Items
 			for(int i = 0;i < items.size();i++){
 				items.get(i).drawSelf(canvas);
@@ -248,21 +235,6 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 						items.remove(i);
 					}
 					
-					/*if(items.get(i).getType() == Item.TARGET_TYPE){
-						target = (Target) items.get(i);
-						//Log.i("Position",String.valueOf(target.getPosition()[1]));
-						if(target.getReachedBottom()){
-							//goo.addCircle(((Target) items.get(i)).getRadius());
-							//target.setHit();
-							city.reduceShield(10);
-							items.remove(i);
-						}
-						if(target.getHit()){
-							items.remove(i);
-							hits++;
-							//displayContainer.getScore().addHit();
-						}
-					}*/
 				}catch(IndexOutOfBoundsException e){
 					
 				}catch(NullPointerException e){
@@ -271,25 +243,6 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 			}
 		
 			timer = gameTime;
-				
-			/*if(!displayContainer.getPauseButton().getPaused()){
-				// Check for hits
-				if(gun.checkForHit(items)){
-					if(NumberOfTargets < highestNumberOfTargets && rand.nextFloat() < 0.1){
-						NumberOfTargets++;
-					}
-					if(NumberOfTargets > lowestNumberOfTargets && rand.nextFloat() > 0.95){
-						NumberOfTargets--;
-					}
-					
-					//Log.i("Targets",String.valueOf(NumberOfTargets));
-				}
-				
-				if(numberOfTargets() < NumberOfTargets){
-					addTarget();
-				}
-				
-			}*/
 			
 			if(numberOfTargets() < NumberOfTargets){
 				addTarget();
@@ -399,6 +352,6 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 	}
 	
 	public City getCity(){
-		return city;
+		return city; 
 	}
 }
