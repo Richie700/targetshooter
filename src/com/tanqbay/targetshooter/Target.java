@@ -17,6 +17,7 @@ public class Target extends Item {
 	protected float[] Destination;
 	protected float[] Position;
 	protected float radius;
+	protected float hitDifficultyModifier = 20;
 	//private float actualRadius = 50;
 	protected boolean hit = false;
 	protected boolean reachedBottom = false;
@@ -149,7 +150,7 @@ public class Target extends Item {
 	}
 	
 	public boolean pointInside(double[] point){
-		return distance(point[0],point[1],Position[0],Position[1]) < radius;
+		return distance(point[0],point[1],Position[0],Position[1]) < radius + hitDifficultyModifier;
 	}
 	
 	public void setHit(){

@@ -56,8 +56,8 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 	
 	private int FinishedFrame = 0;
 	private boolean Finished = false;
-	private int lowestNumberOfTargets = 2;
-	private int highestNumberOfTargets = 4;
+	private int lowestNumberOfTargets = 4;//2
+	private int highestNumberOfTargets = 8;//4
 	private int NumberOfTargets = lowestNumberOfTargets;
 	private Random rand;
 	private Bitmap background;
