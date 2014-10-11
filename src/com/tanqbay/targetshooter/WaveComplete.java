@@ -2,9 +2,11 @@ package com.tanqbay.targetshooter;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Typeface;
 
 public class WaveComplete extends Item{
 	
+	private Paint paint;
 	private int waveNumber;
 	private int frameCount = 0;
 	
@@ -12,6 +14,15 @@ public class WaveComplete extends Item{
 		super(drawingSurface);
 		
 		this.waveNumber = waveNumber;
+		
+		paint = new Paint();
+		
+		paint.setTextSize(30);
+		paint.setTypeface(Typeface.create(Typeface.DEFAULT,Typeface.BOLD));
+		
+		paint.setColor(0xff00ff00);
+		paint.setAntiAlias(true);
+		
 	}
 	
 	public void drawSelf(Canvas canvas){
