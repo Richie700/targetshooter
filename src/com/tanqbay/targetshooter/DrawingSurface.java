@@ -128,7 +128,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 		Finished = false;
 	}
 	
-	privare void setupWave(){
+	private void setupWave(){
 		wave = new Wave();
 	}
 	

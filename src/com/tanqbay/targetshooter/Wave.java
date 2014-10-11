@@ -36,6 +36,7 @@ public class Wave{
 		
 	}
 	
-	public boolean addTarget(int currentNumber)
-		return currentNumber < NumberOfTargets;
+	public boolean addTarget(int currentNumber){
+			return currentNumber < NumberOfTargets;
+	}
 }
