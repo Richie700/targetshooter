@@ -1,7 +1,6 @@
 package com.tanqbay.targetshooter;
 
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Collections;
 
 import android.app.Activity;
@@ -56,10 +55,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 	
 	private int FinishedFrame = 0;
 	private boolean Finished = false;
-	private int lowestNumberOfTargets = 4;//2
-	private int highestNumberOfTargets = 8;//4
-	private int NumberOfTargets = lowestNumberOfTargets;
-	private Random rand;
+	private Wave wave;
 	private Bitmap background;
 	private int hits;
 	//private AdView NextAd;
@@ -122,12 +118,18 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 		FinishedFrame = 0;
 		hits = 0;
 		
-		rand = new Random();
+		
+		
+		setupWave();
 		
 		createItems();
 		
 		startAnimationThread();
 		Finished = false;
+	}
+	
+	privare void setupWave(){
+		wave = new Wave();
 	}
 	
 	private void createItems(){
@@ -156,7 +158,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 	private void addTarget(){
 		
 		
-		if(rand.nextFloat() < 0.8){
+		if(wave.addShip()){
 			Ship ship = new Ship(this);
 			
 			items.add(ship);
@@ -166,12 +168,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 			items.add(bomber);
 		}
 		
-		if(NumberOfTargets < highestNumberOfTargets && rand.nextFloat() < 0.1){
-			NumberOfTargets++;
-		}
-		if(NumberOfTargets > lowestNumberOfTargets && rand.nextFloat() > 0.95){
-			NumberOfTargets--;
-		}
+		wave.adjustTargetNumber();
 		
 		Collections.sort(items);
 	}
@@ -244,7 +241,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 		
 			timer = gameTime;
 			
-			if(numberOfTargets() < NumberOfTargets){
+			if(wave.addTarget(numberOfTargets())){
 				addTarget();
 			}
 			
