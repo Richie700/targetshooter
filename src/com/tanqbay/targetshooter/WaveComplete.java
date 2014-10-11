@@ -1,5 +1,8 @@
 package com.tanqbay.targetshooter;
 
+import android.graphics.Canvas;
+import android.graphics.Paint;
+
 public class WaveComplete extends Item{
 	
 	private int waveNumber;
