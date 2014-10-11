@@ -67,7 +67,7 @@ public class Wave{
 	}
 	
 	public Wave getNextWave(){
-		return new Wave(5,lowestNumberOfTargets++,highestNumberOfTargets++,totalTargets + 1);
+		return new Wave(++waveNumber,++lowestNumberOfTargets,++highestNumberOfTargets,totalTargets + 1);
 	}
 	
 	
