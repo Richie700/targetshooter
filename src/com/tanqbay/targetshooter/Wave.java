@@ -4,16 +4,25 @@ import java.util.Random;
 
 public class Wave{
 	
-	private int lowestNumberOfTargets = 2;//2
-	private int highestNumberOfTargets = 4;//4
-	private int numberOfTargets = lowestNumberOfTargets;
-	private int totalTargets = 5;
+	private int lowestNumberOfTargets;//2
+	private int highestNumberOfTargets;//4
+	private int numberOfTargets;
+	private int totalTargets;
 	private int targetsAdded = 0;
-	private int waveNumber = 1;
+	private int waveNumber;
 	private Random rand;
 	
 	public Wave(){
 		rand = new Random();
+		
+		this.waveNumber = 1;
+		this.lowestNumberOfTargets = 2;
+		this.highestNumberOfTargets = 4;
+	 this.totalTargets = 5;
+  
+  numberOfTargets = lowestNumberOfTargets;
+	 
+  
 	}
 	
 	public Wave(int waveNumber,int lowestNumberOfTargets,int highestNumberOfTargets,int totalTargets){
