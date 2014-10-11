@@ -7,7 +7,7 @@ public class Wave{
 	private int lowestNumberOfTargets = 2;//2
 	private int highestNumberOfTargets = 4;//4
 	private int numberOfTargets = lowestNumberOfTargets;
-	private int totalTargets = 10;
+	private int totalTargets = 5;
 	private int targetsAdded = 0;
 	private int waveNumber = 1;
 	private Random rand;
@@ -58,7 +58,7 @@ public class Wave{
 	}
 	
 	public Wave getNextWave(){
-		return new Wave(waveNumber++,lowestNumberOfTargets++,highestNumberOfTargets++,totalTargets + 5);
+		return new Wave(waveNumber++,lowestNumberOfTargets++,highestNumberOfTargets++,totalTargets + 1);
 	}
 	
 	
