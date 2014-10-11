@@ -53,7 +53,6 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 	private City city;
 	private DisplayContainer displayContainer;
 	
-	private int FinishedFrame = 0;
 	private boolean Finished = false;
 	private Wave wave;
 	private Bitmap background;
@@ -115,10 +114,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 			this.thread.setRunning(false);
 		}
 				
-		FinishedFrame = 0;
 		hits = 0;
-		
-		
 		
 		setupWave();
 		
@@ -162,7 +158,9 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 			WaveComplete waveComplete = new WaveComplete(this,wave.getWaveNumber());
 			items.add(waveComplete);
 			
-			wave = wave.getNextWave();
+			Wave nextWave = wave.getNextWave();
+			
+			wave = nextWave;
 			
 		}
 		
