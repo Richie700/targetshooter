@@ -29,7 +29,7 @@ public class WaveComplete extends Item{
 		
 		paint.setColor(0xff00ff00);
 		
-		String message = "Wave" + String.valueOf(waveNumber) + " Complete";
+		String message = "Wave " + String.valueOf(waveNumber) + " Complete";
 		
 		float textWidth = paint.measureText(message);
 		

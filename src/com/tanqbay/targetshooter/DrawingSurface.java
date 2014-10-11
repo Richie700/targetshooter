@@ -250,7 +250,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 		
 			timer = gameTime;
 			
-			if(wave.addTarget(numberOfTargets())){
+			if(wave.shouldAddTarget(numberOfTargets())){
 				addTarget();
 			}
 			

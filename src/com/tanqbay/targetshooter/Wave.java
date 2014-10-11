@@ -41,12 +41,11 @@ public class Wave{
 			numberOfTargets--;
 		}
 		
+		targetsAdded++;
+		
 	}
 	
-	public boolean addTarget(int currentNumber){
-			
-			targetsAdded++;
-			
+	public boolean shouldAddTarget(int currentNumber){
 			return currentNumber < numberOfTargets;
 	}
 	
