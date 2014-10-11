@@ -7,7 +7,7 @@ public class Wave{
 	private int lowestNumberOfTargets = 2;//2
 	private int highestNumberOfTargets = 4;//4
 	private int numberOfTargets = lowestNumberOfTargets;
-	private int totalTargets = 20;
+	private int totalTargets = 10;
 	private int targetsAdded = 0;
 	private int waveNumber = 1;
 	private Random rand;
@@ -17,6 +17,8 @@ public class Wave{
 	}
 	
 	public Wave(int waveNumber,int lowestNumberOfTargets,int highestNumberOfTargets,int totalTargets){
+		
+		rand = new Random();
 		
 		this.waveNumber = waveNumber;
 		this.lowestNumberOfTargets = lowestNumberOfTargets;
