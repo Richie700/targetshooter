@@ -47,15 +47,15 @@ public class AnimationThread extends Thread {
 					// inconsistent state
 					if (c != null) {
 						surfaceHolder.unlockCanvasAndPost(c);
-					}
-				}
-			}catch(Exception e2){
-				// do a notification
+}
+}catch(Exception e2){
+// do a notification
 
-				DebugNotifier.notify(e2.getMessage());
+DebugNotifier.notify(e2.getMessage());
 
 
-			}
-		}    		
-	}
+}
+}
+}    		
+}
 }

@@ -7,11 +7,13 @@
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/City.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/MainActivity.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/R$attr.class \
+/home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/Wave.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/BuildConfig.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/Ship.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/Score.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/ISurface.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/DrawingSurface.class \
+/home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/WaveComplete.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/R$menu.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/R$string.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/R$layout.class \
@@ -24,6 +26,7 @@
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/R$drawable.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/PauseButton.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/R$dimen.class \
+/home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/Item$1.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/Gun.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/R$style.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/dexedLibs/android-support-v4-4105ba5a6ef05e009c9d6b8aace6c572.jar \
