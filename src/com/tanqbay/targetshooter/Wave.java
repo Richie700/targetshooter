@@ -6,20 +6,25 @@ public class Wave{
 	
 	private int lowestNumberOfTargets = 2;//2
 	private int highestNumberOfTargets = 4;//4
-	private int NumberOfTargets = lowestNumberOfTargets;
+	private int numberOfTargets = lowestNumberOfTargets;
+	private int totalTargets = 20;
+	private int targetsAdded = 0;
+	private int waveNumber = 1;
 	private Random rand;
 	
 	public Wave(){
 		rand = new Random();
 	}
 	
-	public Wave(int lowestNumberOfTargets,int highestNumberOfTargets){
+	public Wave(int waveNumber,int lowestNumberOfTargets,int highestNumberOfTargets,int totalTargets){
 		
-		NumberOfTargets = lowestNumberOfTargets;
-		
+		this.waveNumber = waveNumber;
 		this.lowestNumberOfTargets = lowestNumberOfTargets;
 		this.highestNumberOfTargets = highestNumberOfTargets;
-	
+	 this.totalTargets = totalTargets;
+	 
+	 numberOfTargets = lowestNumberOfTargets;
+	 
 	}
 	
 	public boolean addShip(){
@@ -27,16 +32,33 @@ public class Wave{
 	}
 	
 	public void adjustTargetNumber(){
-		if(NumberOfTargets < highestNumberOfTargets && rand.nextFloat() < 0.1){
-			NumberOfTargets++;
+		if(numberOfTargets < highestNumberOfTargets && rand.nextFloat() < 0.1){
+			numberOfTargets++;
 		}
-		if(NumberOfTargets > lowestNumberOfTargets && rand.nextFloat() > 0.95){
-			NumberOfTargets--;
+		if(numberOfTargets > lowestNumberOfTargets && rand.nextFloat() > 0.95){
+			numberOfTargets--;
 		}
 		
 	}
 	
 	public boolean addTarget(int currentNumber){
-			return currentNumber < NumberOfTargets;
+			
+			targetsAdded++;
+			
+			return currentNumber < numberOfTargets;
 	}
+	
+	public boolean isComplete(){
+		return targetsAdded > totalTargets;
+	}
+	
+	public int getWaveNumber(){
+		return waveNumber;
+	}
+	
+	public Wave getNextWave(){
+		return new Wave(waveNumber++,lowestNumberOfTargets++,highestNumberOfTargets++,totalTargets + 5);
+	}
+	
+	
 }
