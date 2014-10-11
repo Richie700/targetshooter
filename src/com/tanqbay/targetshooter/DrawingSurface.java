@@ -158,9 +158,8 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 			WaveComplete waveComplete = new WaveComplete(this,wave.getWaveNumber());
 			items.add(waveComplete);
 			
-			Wave nextWave = wave.getNextWave();
+			wave = wave.getNextWave();
 			
-			wave = nextWave;
 			
 		}
 		
