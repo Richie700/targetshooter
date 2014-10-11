@@ -2,16 +2,19 @@ package com.tanqbay.targetshooter;
 
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;
+import android.content.Context;
 
 public class AnimationThread extends Thread {
 	private SurfaceHolder surfaceHolder;
 	private ISurface panel;
 	private boolean run = false;
+	private Context context;
 	
-	public AnimationThread(SurfaceHolder surfaceHolder, ISurface panel) {
+	public AnimationThread(SurfaceHolder surfaceHolder, ISurface panel, Context context) {
 		this.surfaceHolder = surfaceHolder;
 		this.panel = panel;
-		
+		this.context = context;		
+
 		panel.onInitalize();
 	}
 	
@@ -50,9 +53,7 @@ public class AnimationThread extends Thread {
 					}
 				}
 			}catch(Exception e2){
-				// do a notification
-
-				DebugNotifier.notify(e2.getMessage());
+				DebugNotifier.notify(e2,context);
 
 
 			}

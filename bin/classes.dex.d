@@ -10,6 +10,7 @@
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/Wave.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/BuildConfig.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/Ship.class \
+/home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/DebugNotifier.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/Score.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/ISurface.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/DrawingSurface.class \

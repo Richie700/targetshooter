@@ -74,7 +74,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
         
 	}
 	
-	private void constructorFunctions(Context context){
+	private void constructorFunctions(){
 		
 		background = BitmapFactory.decodeResource(context.getResources(),R.drawable.dense_star_field);
 		

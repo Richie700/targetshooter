@@ -16,10 +16,8 @@ public class DebugNotifier{
 	public DebugNotifier(){
 	}
 	
-	public static void notify(Exception e,Context context){
+	public static void notify(String message,Context context){
 		
-		String message = e.getMessage();	
-
 		NotificationCompat.Builder mBuilder =
         new NotificationCompat.Builder(context)
         .setSmallIcon(R.drawable.bomb1)

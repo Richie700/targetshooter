@@ -1,0 +1,169 @@
+V/ApplicationPolicy(  843): isApplicationStateBlocked userId 0 pkgname com.tanqbay.targetshooter
+E/dalvikvm( 9169): >>>>> com.tanqbay.targetshooter [ userId:0 | appId:10272 ]
+V/ApplicationPolicy(  843): isApplicationStateBlocked userId 0 pkgname com.tanqbay.targetshooter
+I/dalvikvm( 9169):   at com.tanqbay.targetshooter.DrawingSurface.constructorFunctions(DrawingSurface.java:79)
+I/dalvikvm( 9169):   at com.tanqbay.targetshooter.DrawingSurface.<init>(DrawingSurface.java:73)
+I/dalvikvm( 9169):   at com.tanqbay.targetshooter.MainActivity.onCreate(MainActivity.java:15)
+D/CrashAnrDetector(  843): processName: com.tanqbay.targetshooter
+D/CrashAnrDetector(  843): broadcastEvent : com.tanqbay.targetshooter data_app_crash
+I/WindowState(  843): WIN DEATH: Window{43883f60 u0 com.tanqbay.targetshooter/com.tanqbay.targetshooter.MainActivity}
+W/WindowManager(  843): Force-removing child win Window{43a56848 u0 SurfaceView} from container Window{43883f60 u0 com.tanqbay.targetshooter/com.tanqbay.targetshooter.MainActivity}
+I/ActivityManager(  843): Process com.tanqbay.targetshooter (pid 9169) (adj 13) has died.
+V/ApplicationPolicy(  843): isApplicationStateBlocked userId 0 pkgname com.tanqbay.targetshooter
+E/dalvikvm( 9399): >>>>> com.tanqbay.targetshooter [ userId:0 | appId:10272 ]
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/create]
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/pause]
+V/ApplicationPolicy(  843): isApplicationStateBlocked userId 0 pkgname com.tanqbay.targetshooter
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/create]
+I/dalvikvm( 9399):   at com.tanqbay.targetshooter.DrawingSurface.constructorFunctions(DrawingSurface.java:79)
+I/dalvikvm( 9399):   at com.tanqbay.targetshooter.DrawingSurface.<init>(DrawingSurface.java:73)
+I/dalvikvm( 9399):   at com.tanqbay.targetshooter.MainActivity.onCreate(MainActivity.java:15)
+E/AndroidRuntime( 9399): Process: com.tanqbay.targetshooter, PID: 9399
+E/AndroidRuntime( 9399): java.lang.RuntimeException: Unable to start activity ComponentInfo{com.tanqbay.targetshooter/com.tanqbay.targetshooter.MainActivity}: android.view.InflateException: Binary XML file line #8: Error inflating class <unknown>
+E/AndroidRuntime( 9399): 	at com.tanqbay.targetshooter.MainActivity.onCreate(MainActivity.java:15)
+E/AndroidRuntime( 9399): 	at com.tanqbay.targetshooter.DrawingSurface.constructorFunctions(DrawingSurface.java:79)
+E/AndroidRuntime( 9399): 	at com.tanqbay.targetshooter.DrawingSurface.<init>(DrawingSurface.java:73)
+W/ActivityManager(  843):   Force finishing activity com.tanqbay.targetshooter/.MainActivity
+D/CrashAnrDetector(  843): processName: com.tanqbay.targetshooter
+D/CrashAnrDetector(  843): broadcastEvent : com.tanqbay.targetshooter data_app_crash
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/pause]
+I/WindowState(  843): WIN DEATH: Window{44859df8 u0 com.tanqbay.targetshooter/com.tanqbay.targetshooter.MainActivity}
+I/ActivityManager(  843): Process com.tanqbay.targetshooter (pid 9399) (adj 11) has died.
+W/WindowManager(  843): Force-removing child win Window{4492b918 u0 SurfaceView} from container Window{44859df8 u0 com.tanqbay.targetshooter/com.tanqbay.targetshooter.MainActivity}
+V/ApplicationPolicy(  843): isApplicationStateBlocked userId 0 pkgname com.tanqbay.targetshooter
+E/dalvikvm( 9634): >>>>> com.tanqbay.targetshooter [ userId:0 | appId:10272 ]
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/create]
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/pause]
+V/ApplicationPolicy(  843): isApplicationStateBlocked userId 0 pkgname com.tanqbay.targetshooter
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/create]
+I/dalvikvm( 9634):   at com.tanqbay.targetshooter.DrawingSurface.constructorFunctions(DrawingSurface.java:79)
+I/dalvikvm( 9634):   at com.tanqbay.targetshooter.DrawingSurface.<init>(DrawingSurface.java:73)
+I/dalvikvm( 9634):   at com.tanqbay.targetshooter.MainActivity.onCreate(MainActivity.java:15)
+E/AndroidRuntime( 9634): Process: com.tanqbay.targetshooter, PID: 9634
+E/AndroidRuntime( 9634): java.lang.RuntimeException: Unable to start activity ComponentInfo{com.tanqbay.targetshooter/com.tanqbay.targetshooter.MainActivity}: android.view.InflateException: Binary XML file line #8: Error inflating class <unknown>
+E/AndroidRuntime( 9634): 	at com.tanqbay.targetshooter.MainActivity.onCreate(MainActivity.java:15)
+E/AndroidRuntime( 9634): 	at com.tanqbay.targetshooter.DrawingSurface.constructorFunctions(DrawingSurface.java:79)
+E/AndroidRuntime( 9634): 	at com.tanqbay.targetshooter.DrawingSurface.<init>(DrawingSurface.java:73)
+W/ActivityManager(  843):   Force finishing activity com.tanqbay.targetshooter/.MainActivity
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/pause]
+D/CrashAnrDetector(  843): processName: com.tanqbay.targetshooter
+D/CrashAnrDetector(  843): broadcastEvent : com.tanqbay.targetshooter data_app_crash
+I/ActivityManager(  843): Process com.tanqbay.targetshooter (pid 9634) (adj 11) has died.
+I/WindowState(  843): WIN DEATH: Window{43850fa0 u0 com.tanqbay.targetshooter/com.tanqbay.targetshooter.MainActivity}
+W/WindowManager(  843): Force-removing child win Window{438e1cf8 u0 SurfaceView} from container Window{43850fa0 u0 com.tanqbay.targetshooter/com.tanqbay.targetshooter.MainActivity}
+V/ApplicationPolicy(  843): isApplicationStateBlocked userId 0 pkgname com.tanqbay.targetshooter
+E/dalvikvm( 9977): >>>>> com.tanqbay.targetshooter [ userId:0 | appId:10272 ]
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/create]
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/pause]
+V/ApplicationPolicy(  843): isApplicationStateBlocked userId 0 pkgname com.tanqbay.targetshooter
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/create]
+I/dalvikvm( 9977):   at com.tanqbay.targetshooter.DrawingSurface.constructorFunctions(DrawingSurface.java:79)
+I/dalvikvm( 9977):   at com.tanqbay.targetshooter.DrawingSurface.<init>(DrawingSurface.java:73)
+I/dalvikvm( 9977):   at com.tanqbay.targetshooter.MainActivity.onCreate(MainActivity.java:15)
+E/AndroidRuntime( 9977): Process: com.tanqbay.targetshooter, PID: 9977
+E/AndroidRuntime( 9977): java.lang.RuntimeException: Unable to start activity ComponentInfo{com.tanqbay.targetshooter/com.tanqbay.targetshooter.MainActivity}: android.view.InflateException: Binary XML file line #8: Error inflating class <unknown>
+E/AndroidRuntime( 9977): 	at com.tanqbay.targetshooter.MainActivity.onCreate(MainActivity.java:15)
+E/AndroidRuntime( 9977): 	at com.tanqbay.targetshooter.DrawingSurface.constructorFunctions(DrawingSurface.java:79)
+E/AndroidRuntime( 9977): 	at com.tanqbay.targetshooter.DrawingSurface.<init>(DrawingSurface.java:73)
+W/ActivityManager(  843):   Force finishing activity com.tanqbay.targetshooter/.MainActivity
+D/CrashAnrDetector(  843): processName: com.tanqbay.targetshooter
+D/CrashAnrDetector(  843): broadcastEvent : com.tanqbay.targetshooter data_app_crash
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/pause]
+I/ActivityManager(  843): Process com.tanqbay.targetshooter (pid 9977) (adj 11) has died.
+I/WindowState(  843): WIN DEATH: Window{43525348 u0 com.tanqbay.targetshooter/com.tanqbay.targetshooter.MainActivity}
+V/ApplicationPolicy(  843): isApplicationStateBlocked userId 0 pkgname com.tanqbay.targetshooter
+E/dalvikvm(10512): >>>>> com.tanqbay.targetshooter [ userId:0 | appId:10272 ]
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/create]
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/pause]
+V/ApplicationPolicy(  843): isApplicationStateBlocked userId 0 pkgname com.tanqbay.targetshooter
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/create]
+I/dalvikvm(10512):   at com.tanqbay.targetshooter.DrawingSurface.constructorFunctions(DrawingSurface.java:79)
+I/dalvikvm(10512):   at com.tanqbay.targetshooter.DrawingSurface.<init>(DrawingSurface.java:73)
+I/dalvikvm(10512):   at com.tanqbay.targetshooter.MainActivity.onCreate(MainActivity.java:15)
+E/AndroidRuntime(10512): Process: com.tanqbay.targetshooter, PID: 10512
+E/AndroidRuntime(10512): java.lang.RuntimeException: Unable to start activity ComponentInfo{com.tanqbay.targetshooter/com.tanqbay.targetshooter.MainActivity}: android.view.InflateException: Binary XML file line #8: Error inflating class <unknown>
+E/AndroidRuntime(10512): 	at com.tanqbay.targetshooter.MainActivity.onCreate(MainActivity.java:15)
+E/AndroidRuntime(10512): 	at com.tanqbay.targetshooter.DrawingSurface.constructorFunctions(DrawingSurface.java:79)
+E/AndroidRuntime(10512): 	at com.tanqbay.targetshooter.DrawingSurface.<init>(DrawingSurface.java:73)
+W/ActivityManager(  843):   Force finishing activity com.tanqbay.targetshooter/.MainActivity
+D/CrashAnrDetector(  843): processName: com.tanqbay.targetshooter
+D/CrashAnrDetector(  843): broadcastEvent : com.tanqbay.targetshooter data_app_crash
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/pause]
+I/WindowState(  843): WIN DEATH: Window{43c325f0 u0 com.tanqbay.targetshooter/com.tanqbay.targetshooter.MainActivity}
+W/WindowManager(  843): Force-removing child win Window{43c376d0 u0 SurfaceView} from container Window{43c325f0 u0 com.tanqbay.targetshooter/com.tanqbay.targetshooter.MainActivity}
+I/ActivityManager(  843): Process com.tanqbay.targetshooter (pid 10512) (adj 11) has died.
+V/ApplicationPolicy(  843): isApplicationStateBlocked userId 0 pkgname com.tanqbay.targetshooter
+E/dalvikvm(10748): >>>>> com.tanqbay.targetshooter [ userId:0 | appId:10272 ]
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/create]
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/pause]
+V/ApplicationPolicy(  843): isApplicationStateBlocked userId 0 pkgname com.tanqbay.targetshooter
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/create]
+I/dalvikvm(10748):   at com.tanqbay.targetshooter.DrawingSurface.constructorFunctions(DrawingSurface.java:79)
+I/dalvikvm(10748):   at com.tanqbay.targetshooter.DrawingSurface.<init>(DrawingSurface.java:73)
+I/dalvikvm(10748):   at com.tanqbay.targetshooter.MainActivity.onCreate(MainActivity.java:15)
+E/AndroidRuntime(10748): Process: com.tanqbay.targetshooter, PID: 10748
+E/AndroidRuntime(10748): java.lang.RuntimeException: Unable to start activity ComponentInfo{com.tanqbay.targetshooter/com.tanqbay.targetshooter.MainActivity}: android.view.InflateException: Binary XML file line #8: Error inflating class <unknown>
+E/AndroidRuntime(10748): 	at com.tanqbay.targetshooter.MainActivity.onCreate(MainActivity.java:15)
+E/AndroidRuntime(10748): 	at com.tanqbay.targetshooter.DrawingSurface.constructorFunctions(DrawingSurface.java:79)
+E/AndroidRuntime(10748): 	at com.tanqbay.targetshooter.DrawingSurface.<init>(DrawingSurface.java:73)
+W/ActivityManager(  843):   Force finishing activity com.tanqbay.targetshooter/.MainActivity
+D/CrashAnrDetector(  843): processName: com.tanqbay.targetshooter
+D/CrashAnrDetector(  843): broadcastEvent : com.tanqbay.targetshooter data_app_crash
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/pause]
+I/ActivityManager(  843): Process com.tanqbay.targetshooter (pid 10748) (adj 13) has died.
+I/WindowState(  843): WIN DEATH: Window{4324b4f8 u0 com.tanqbay.targetshooter/com.tanqbay.targetshooter.MainActivity}
+W/WindowManager(  843): Force-removing child win Window{4424f6c0 u0 SurfaceView} from container Window{4324b4f8 u0 com.tanqbay.targetshooter/com.tanqbay.targetshooter.MainActivity}
+W/InstallAppProgress(12396): Replacing package:com.tanqbay.targetshooter
+D/PersonaManagerService(  843): needVerificationForPackage com.tanqbay.targetshooter
+V/ApplicationPolicy(  843): isApplicationStateBlocked userId 0 pkgname com.tanqbay.targetshooter
+D/PackageManager(  843): rename dexfile /data/dalvik-cache/data@app@vmdl1638447700.tmp@classes.dex to /data/dalvik-cache/data@app@com.tanqbay.targetshooter-23.apk@classes.dex
+I/PackageManager(  843): Package com.tanqbay.targetshooter codePath changed from /data/app/com.tanqbay.targetshooter-22.apk to /data/app/com.tanqbay.targetshooter-23.apk; Retaining data and using new
+W/PackageManager(  843): Code path for pkg : com.tanqbay.targetshooter changing from /data/app/com.tanqbay.targetshooter-22.apk to /data/app/com.tanqbay.targetshooter-23.apk
+W/PackageManager(  843): Resource path for pkg : com.tanqbay.targetshooter changing from /data/app/com.tanqbay.targetshooter-22.apk to /data/app/com.tanqbay.targetshooter-23.apk
+D/PackageManager(  843): Sending to user 0: act=android.intent.action.PACKAGE_REMOVED dat=package:com.tanqbay.targetshooter flg=0x4000000 Bundle[{android.intent.extra.REMOVED_FOR_ALL_USERS=false, android.intent.extra.UID=10272, android.intent.extra.DATA_REMOVED=false, android.intent.extra.REPLACING=true, android.intent.extra.user_handle=0}]
+D/PackageManager(  843): Sending to user 0: act=android.intent.action.PACKAGE_ADDED dat=package:com.tanqbay.targetshooter flg=0x4000000 Bundle[{android.intent.extra.UID=10272, android.intent.extra.REPLACING=true, android.intent.extra.user_handle=0}]
+D/PackageManager(  843): Sending to user 0: act=android.intent.action.PACKAGE_REPLACED dat=package:com.tanqbay.targetshooter flg=0x4000000 Bundle[{android.intent.extra.UID=10272, android.intent.extra.REPLACING=true, android.intent.extra.user_handle=0}]
+D/BackupManagerService(  843): Received broadcast Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.tanqbay.targetshooter flg=0x4000010 (has extras) }
+D/PackageManager(  843): Sending to user 0: act=android.intent.action.MY_PACKAGE_REPLACED flg=0x4000000 pkg=com.tanqbay.targetshooter Bundle[{android.intent.extra.user_handle=0}]
+D/RCPManagerService(  843): App Installed with packageNAme = com.tanqbay.targetshooter
+D/BackupManagerService(  843): Received broadcast Intent { act=android.intent.action.PACKAGE_ADDED dat=package:com.tanqbay.targetshooter flg=0x4000010 (has extras) }
+D/EnterpriseDeviceManagerService(  843): onPackageUpdateFinished - packageName: com.tanqbay.targetshooter, uid: 10272
+D/elm:14241(12529): ELMAbstractReceiver.onReceive() : Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.tanqbay.targetshooter flg=0x4000010 cmp=com.sec.esdk.elm/.receiver.MainReceiver (has extras) }
+D/elm:14241(12529): ELMAbstractReceiver : Receive Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.tanqbay.targetshooter flg=0x4000010 cmp=com.sec.esdk.elm/.service.ElmAgentService (has extras) } END.
+D/elm:14241(12529): ElmAgentService : onHandleIntent() Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.tanqbay.targetshooter flg=0x4000010 cmp=com.sec.esdk.elm/.service.ElmAgentService (has extras) }
+I/CrashAnrDetector(  843): onPackageUpdateFinished : com.tanqbay.targetshooter
+V/ApplicationPolicy(  843): isApplicationStateBlocked userId 0 pkgname com.tanqbay.targetshooter
+E/dalvikvm(12616): >>>>> com.tanqbay.targetshooter [ userId:0 | appId:10272 ]
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/create]
+D/RCPManager(12673):  in createShortcut() for packageName: com.tanqbay.targetshooter userId0
+D/RCPManagerService(  843):  in createShortcut() for packageName: com.tanqbay.targetshooter userId0
+D/CapabilityManagerService New(12689): The package(com.tanqbay.targetshooter) updated
+D/MagazineService::MagazineBroadcastReceiver(12738): [onReceive] android.intent.action.PACKAGE_REMOVED com.tanqbay.targetshooter
+D/KidsModeInstallReceiver(12764): onReceive intent data =  package:com.tanqbay.targetshooter
+I/ConfigFetchService(32217): PackageReceiver: Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.tanqbay.targetshooter flg=0x4000010 cmp=com.google.android.gms/.config.ConfigFetchService$PackageReceiver (has extras) }
+I/ConfigFetchService(32217): onStartCommand Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.tanqbay.targetshooter cmp=com.google.android.gms/.config.ConfigFetchService (has extras) }
+D/PackageBroadcastService(32217): Received broadcast action=android.intent.action.PACKAGE_REMOVED and uri=com.tanqbay.targetshooter
+W/AmazonAppstore.AppManagerAndroidPackageDelegate(11947): Unable to determine asin for package com.tanqbay.targetshooter.  Skipping metadata update.
+W/AmazonAppstore.AppManagerAndroidPackageDelegate(12271): Unable to determine asin for package com.tanqbay.targetshooter.  Skipping metadata update.
+I/mfl_CloudStorageSyncEna( 2650): Got intent Intent { act=android.intent.action.PACKAGE_ADDED dat=package:com.tanqbay.targetshooter flg=0x4000010 cmp=com.samsung.android.sdk.samsunglink/com.mfluent.asp.sync.CloudStorageSyncEnablerReceiver (has extras) }
+I/IcingCorporaProvider( 1567): Updating corpora: APPS=com.tanqbay.targetshooter, CONTACTS=MAYBE
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/pause]
+V/ApplicationPolicy(  843): isApplicationStateBlocked userId 0 pkgname com.tanqbay.targetshooter
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/create]
+I/dalvikvm(12616):   at com.tanqbay.targetshooter.DrawingSurface.constructorFunctions(DrawingSurface.java:79)
+I/dalvikvm(12616):   at com.tanqbay.targetshooter.DrawingSurface.<init>(DrawingSurface.java:73)
+I/dalvikvm(12616):   at com.tanqbay.targetshooter.MainActivity.onCreate(MainActivity.java:18)
+I/dalvikvm(12616): Could not find method android.support.v4.app.NotificationCompat$Builder.build, referenced from method com.tanqbay.targetshooter.DebugNotifier.notify
+E/AndroidRuntime(12616): Process: com.tanqbay.targetshooter, PID: 12616
+E/AndroidRuntime(12616): 	at com.tanqbay.targetshooter.DebugNotifier.notify(DebugNotifier.java:49)
+E/AndroidRuntime(12616): 	at com.tanqbay.targetshooter.MainActivity.onCreate(MainActivity.java:25)
+W/ActivityManager(  843):   Force finishing activity com.tanqbay.targetshooter/.MainActivity
+D/CrashAnrDetector(  843): processName: com.tanqbay.targetshooter
+D/CrashAnrDetector(  843): broadcastEvent : com.tanqbay.targetshooter data_app_crash
+V/SmartFaceService - 3rd party pause(  843): onReceive [android.intent.action.ACTIVITY_STATE/com.tanqbay.targetshooter/pause]
+D/MagazineService::MagazineBroadcastReceiver(12738): [onReceive] android.intent.action.PACKAGE_ADDED com.tanqbay.targetshooter
+D/MagazineService::MagazineService(12738): [onHandleIntent] Send broadcast to (com.tanqbay.targetshooter).
+I/ConfigFetchService(32217): PackageReceiver: Intent { act=android.intent.action.PACKAGE_ADDED dat=package:com.tanqbay.targetshooter flg=0x4000010 cmp=com.google.android.gms/.config.ConfigFetchService$PackageReceiver (has extras) }
+I/ConfigFetchService(32217): onStartCommand Intent { act=android.intent.action.PACKAGE_ADDED dat=package:com.tanqbay.targetshooter cmp=com.google.android.gms/.config.ConfigFetchService (has extras) }
+D/PackageBroadcastService(32217): Received broadcast action=android.intent.action.PACKAGE_ADDED and uri=com.tanqbay.targetshooter
+I/AutomateIt( 5689): Package com.tanqbay.targetshooter added/replaced. Checking for available plugins...
