@@ -1,6 +1,6 @@
 package com.tanqbay.targetshooter;
 
-public class WaveComlete extends Item{
+public class WaveComplete extends Item{
 	
 	private int waveNumber;
 	private int frameCount = 0;
