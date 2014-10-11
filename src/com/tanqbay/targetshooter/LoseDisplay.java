@@ -11,11 +11,12 @@ public class LoseDisplay extends Item {
 	private int currentHighScore;
 	private int hits = 0;
 
-	public LoseDisplay(DrawingSurface drawingSurface,Boolean newHighScoreReached, int currentHighScore) {
+	public LoseDisplay(DrawingSurface drawingSurface,Boolean newHighScoreReached, int currentHighScore, int hits) {
 		super(drawingSurface);
 		
 		this.newHighScoreReached = newHighScoreReached;
 		this.currentHighScore = currentHighScore;
+		this.hits = hits;
 		
 		paint = new Paint();
 		
@@ -78,8 +79,5 @@ public class LoseDisplay extends Item {
 		
 	}
 	
-	public void update(double timeDifference,DrawingSurface drawingSurface){
-		hits = drawingSurface.getHits();
-	}
 	
 }

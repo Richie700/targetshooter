@@ -27,9 +27,10 @@ public class AnimationThread extends Thread {
 		Canvas c;
 	    while (run) {
 	    	
-	    	c = null;
-	        timer = System.currentTimeMillis();
-        	panel.onUpdate((double) timer);
+	    	try{
+	       c = null;
+	       timer = System.currentTimeMillis();
+        panel.onUpdate((double) timer);
 
         	try {
         		//Thread.sleep(500);
@@ -38,7 +39,7 @@ public class AnimationThread extends Thread {
 	                panel.onRedraw(c);
 	            }
 	        }catch(Exception e){
-	        	e.printStackTrace();
+	         	e.printStackTrace();
 	        }
         	finally {
 	            // do this in a finally so that if an exception is thrown
@@ -46,8 +47,15 @@ public class AnimationThread extends Thread {
 	            // inconsistent state
 	            if (c != null) {
 	                surfaceHolder.unlockCanvasAndPost(c);
-	            }
 	        }
-	    }    		
+	       }catch(Exception e2){
+	       	  // do a notification
+	       	  
+	       	  DebugNotifier.notify(e2.getMessage());
+	       	  
+	       	  
+	       }
+	     }
+	   }    		
 	}
 }

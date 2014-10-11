@@ -275,7 +275,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 			newHighScoreReached = true;
 		}
 		
-		LoseDisplay loseDisplay = new LoseDisplay(this,newHighScoreReached,currentHighScore);
+		LoseDisplay loseDisplay = new LoseDisplay(this,newHighScoreReached,currentHighScore,hits);
 		items.add(loseDisplay);
 		
 	}
