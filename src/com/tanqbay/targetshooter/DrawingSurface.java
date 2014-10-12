@@ -63,20 +63,20 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 	public DrawingSurface(Context context) {
 		super(context);
 		
-		constructorFunctions(context);
+		constructorFunctions();
 		
 	}
 	
 	public DrawingSurface(Context context,AttributeSet attributes) {
 		super(context,attributes);
 		
-		constructorFunctions(context);
+		constructorFunctions();
         
 	}
 	
-	private void constructorFunctions(Context context){
+	private void constructorFunctions(){
 		
-		background = BitmapFactory.decodeResource(context.getResources(),R.drawable.dense_star_field);
+		//background = BitmapFactory.decodeResource(getContext().getResources(),R.drawable.dense_star_field);
 		
 		SetupHolder();
 	}
@@ -109,22 +109,19 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 	}
 	
 	private void setupGame(){
-		try{
-			if(this.thread != null){
-				this.thread.setRunning(false);
-			}
-				
-			hits = 0;
 		
-			setupWave();
-		
-			createItems();
-		
-			startAnimationThread();
-			Finished = false;
-		}catch(Exception e){
-			DebugNotifier.notify(e,getContext());		
+		if(this.thread != null){
+			this.thread.setRunning(false);
 		}
+				
+		hits = 0;
+		
+		setupWave();
+		
+		createItems();
+		
+		startAnimationThread();
+		Finished = false;
 	}
 	
 	private void setupWave(){
@@ -147,7 +144,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 	}
 	
 	private void startAnimationThread(){
-		this.thread = new AnimationThread(drawingSurfaceHolder,this,getContext());
+		this.thread = new AnimationThread(drawingSurfaceHolder,this);
 		
 		this.thread.setRunning(true);
 		
@@ -214,7 +211,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 			
 			Rect sourceRect = new Rect(0,0,getWidth(),getHeight());
 			
-			canvas.drawBitmap(background,sourceRect,rect,new Paint());
+			//canvas.drawBitmap(background,sourceRect,rect,new Paint());
 			
 			// Draw Items
 			for(int i = 0;i < items.size();i++){
