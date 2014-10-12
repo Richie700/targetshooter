@@ -3,6 +3,7 @@ package com.tanqbay.targetshooter;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.view.MotionEvent;
 
 public class DisplayContainer extends Item {
 
