@@ -40,7 +40,7 @@ public class PauseButton extends Item {
 		
 		canvas.drawText(pauseMessage,startX,30,paint);
 		
-		if(Paused){
+		/*if(Paused){
 			paint.setColor(0xaa000000);
 			canvas.drawPaint(paint);
 			
@@ -55,7 +55,7 @@ public class PauseButton extends Item {
 			float startY = surfaceHeight / 2;
 			
 			canvas.drawText(message,startX,startY,paint);
-		}
+		}*/
 	}
 	
 	public void update(double timeDifference,DrawingSurface drawingSurface){
@@ -84,6 +84,7 @@ public class PauseButton extends Item {
 				}
 		}
 	}
+}
 	
 	public void togglePause(){
 		if(Paused){
