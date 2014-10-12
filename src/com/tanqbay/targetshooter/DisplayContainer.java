@@ -43,7 +43,7 @@ public class DisplayContainer extends Item {
 	
 	public void handleTouchEvent(MotionEvent event,DrawingSurface drawingSurface){
 		score.handleTouchEvent(event,drawingSurface);
-		pauseButtonhandleTouchEvent(event,drawingSurface);
+		pauseButton.handleTouchEvent(event,drawingSurface);
 	
 	}
 	
