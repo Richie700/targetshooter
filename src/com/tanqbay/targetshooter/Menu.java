@@ -32,9 +32,9 @@ public class Menu extends Item {
 			
 			String message = "Menu";
 			
-			textWidth = paint.measureText(message);
+			float textWidth = paint.measureText(message);
 			
-			startX = (surfaceWidth / 2) - (textWidth / 2);
+			float startX = (surfaceWidth / 2) - (textWidth / 2);
 			float startY = surfaceHeight / 2;
 			
 			canvas.drawText(message,startX,startY,paint);
