@@ -52,8 +52,11 @@ public class Menu extends Item {
 		float YCoord = event.getY(Index);
 		
 		if(event.getActionMasked() == MotionEvent.ACTION_DOWN || event.getActionMasked() == MotionEvent.ACTION_POINTER_DOWN){
-			 setReadyToBeRemoved(true);
-			 drawingSurface.getPauseButton().UnPauseGame();
-		}
+			 
+			 if(XCoord > surfaceWidth / 2){
+			 		setReadyToBeRemoved(true);
+			 	drawingSurface.getPauseButton().UnPauseGame();
+			 }
+			}
 	}
 }
