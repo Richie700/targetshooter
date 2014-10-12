@@ -53,7 +53,7 @@ public class Menu extends Item {
 		
 		if(event.getActionMasked() == MotionEvent.ACTION_DOWN || event.getActionMasked() == MotionEvent.ACTION_POINTER_DOWN){
 			 
-			 if(XCoord > surfaceWidth / 2){
+			 if(YCoord > surfaceHeight / 2){
 			 		setReadyToBeRemoved(true);
 			 	drawingSurface.getPauseButton().UnPauseGame();
 			 }
