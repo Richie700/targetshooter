@@ -63,20 +63,20 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 	public DrawingSurface(Context context) {
 		super(context);
 		
-		constructorFunctions();
+		constructorFunctions(context);
 		
 	}
 	
 	public DrawingSurface(Context context,AttributeSet attributes) {
 		super(context,attributes);
 		
-		constructorFunctions();
+		constructorFunctions(context);
         
 	}
 	
 	private void constructorFunctions(){
 		
-		//background = BitmapFactory.decodeResource(getContext().getResources(),R.drawable.dense_star_field);
+		//background = BitmapFactory.decodeResource(context.getResources(),R.drawable.dense_star_field);
 		
 		SetupHolder();
 	}
@@ -109,19 +109,22 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 	}
 	
 	private void setupGame(){
-		
-		if(this.thread != null){
-			this.thread.setRunning(false);
-		}
+		try{
+			if(this.thread != null){
+				this.thread.setRunning(false);
+			}
 				
-		hits = 0;
+			hits = 0;
 		
-		setupWave();
+			setupWave();
 		
-		createItems();
+			createItems();
 		
-		startAnimationThread();
-		Finished = false;
+			startAnimationThread();
+			Finished = false;
+		}catch(Exception e){
+			DebugNotifier.notify(e,getContext());		
+		}
 	}
 	
 	private void setupWave(){
@@ -144,7 +147,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 	}
 	
 	private void startAnimationThread(){
-		this.thread = new AnimationThread(drawingSurfaceHolder,this);
+		this.thread = new AnimationThread(drawingSurfaceHolder,this,getContext());
 		
 		this.thread.setRunning(true);
 		
