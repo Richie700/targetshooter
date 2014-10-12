@@ -29,6 +29,9 @@ public class Item implements Comparable<Item>,Parcelable {
 		
 	}
 	
+	public void handleTouchEvent(MotionEvent event,DrawingSurface drawingSurface){
+	}
+	
 	public int getType(){
 		return 0;
 	}

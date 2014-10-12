@@ -40,6 +40,12 @@ public class DisplayContainer extends Item {
 		pauseButton.update(timeDifference,drawingSurface);
 	}
 	
+	public void handleTouchEvent(MotionEvent event,DrawingSurface drawingSurface){
+		score.handleTouchEvent(event,drawingSurface);
+		pauseButtonhandleTouchEvent(event,drawingSurface);
+	
+	}
+	
 	public PauseButton getPauseButton(){
 		return pauseButton;
 	}

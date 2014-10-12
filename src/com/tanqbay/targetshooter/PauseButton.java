@@ -82,9 +82,6 @@ public class PauseButton extends Item {
 					drawingSurface.getItems().add(menu);
 					
 				}
-			}else{
-				togglePause();
-			}
 		}
 	}
 	
