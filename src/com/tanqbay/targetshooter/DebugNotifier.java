@@ -11,30 +11,35 @@ import android.support.v4.app.NotificationCompat;
 
 public class DebugNotifier{
 	
-	private static int mId = 1;
-	
 	public DebugNotifier(){
+		
 	}
 	
-	public static void notify(Exception e,Context context){
+	public static void notify(String message){
 		
-		String message = e.getMessage();	
-
 		NotificationCompat.Builder mBuilder =
-        new NotificationCompat.Builder(context)
+        new NotificationCompat.Builder(this)
         .setSmallIcon(R.drawable.bomb1)
         .setContentTitle("Error")
         .setContentText(message);
+        
+ NotificationCompat.BigTextStyle bigTextStyle =
+        new NotificationCompat.BigTextStyle();
+ 
+ bigTextStyle.bigText(message);
+ 
+ mBuilder.setStyle(bigTextStyle);
+ 
 	// Creates an explicit intent for an Activity in your app
-	Intent resultIntent = new Intent(context, MainActivity.class);
+	Intent resultIntent = new Intent(this, ResultActivity.class);
 	
 	// The stack builder object will contain an artificial back stack for the
 	// started Activity.
 	// This ensures that navigating backward from the Activity leads out of
 	// your application to the Home screen.
-	TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
+	TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
 	// Adds the back stack for the Intent (but not the Intent itself)
-	stackBuilder.addParentStack(MainActivity.class);
+	stackBuilder.addParentStack(ResultActivity.class);
 	// Adds the Intent that starts the Activity to the top of the stack
 	stackBuilder.addNextIntent(resultIntent);
 	PendingIntent resultPendingIntent =
@@ -44,7 +49,7 @@ public class DebugNotifier{
 	        );
 	mBuilder.setContentIntent(resultPendingIntent);
 	NotificationManager mNotificationManager =
-	    (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+	    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 	// mId allows you to update the notification later on.
 	mNotificationManager.notify(mId, mBuilder.build());
 		}
