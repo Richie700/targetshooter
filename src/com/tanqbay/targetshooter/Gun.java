@@ -133,7 +133,7 @@ public class Gun extends Item {
 		
 		if(!drawingSurface.getPaused()){
 			if(YCoord > drawingSurface.getHeight() / 6.0 
-				&& (event.isDown()){
+				&& event.isDown()){
 				fire(drawingSurface);
 			}
 			

@@ -48,15 +48,15 @@ public class SimpleMotionEvent{
 	}
 	
 	public boolean isDown(){
-		type == DOWN;
+		return type == DOWN;
 	}
 	
 	public boolean isMove(){
-		type == MOVE;
+		return type == MOVE;
 	}
 	
 	public boolean isUp(){
-		type == UP;
+		return type == UP;
 	}
 	
 }
