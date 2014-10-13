@@ -128,8 +128,8 @@ public class Gun extends Item {
 	
 	public void handleTouchEvent(SimpleMotionEvent event,DrawingSurface drawingSurface){
 		
-		YCoord = event.getYCoord();
-		XCoord = event.getXCoord();
+		float YCoord = event.getYCoord();
+		float XCoord = event.getXCoord();
 		
 		if(!drawingSurface.getPaused()){
 			if(YCoord > drawingSurface.getHeight() / 6.0 
