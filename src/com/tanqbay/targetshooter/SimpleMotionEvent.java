@@ -4,15 +4,12 @@ import android.view.MotionEvent;
 
 public class SimpleMotionEvent{
 	
-	public static final int DOWN = 1;
-	public static final int MOVE = 2;
-	public static final int UP = 3;
-	
-	
 	private float xCoord;
 	private float yCoord;
 	
-	private int type;
+	private boolean isDownEvent = false;
+	private boolean isMoveEvent = false;
+	private boolean isUpEvent = false;
 	
 	public SimpleMotionEvent(MotionEvent event){
 		int index = event.getActionIndex();
@@ -21,16 +18,15 @@ public class SimpleMotionEvent{
 			yCoord = event.getY(index);
 			
 			if(event.getActionMasked() == MotionEvent.ACTION_DOWN || event.getActionMasked() == MotionEvent.ACTION_POINTER_DOWN){
-				type = DOWN;
+				isDownEvent = true;
 			}
 			
-			
 			if(event.getActionMasked() == MotionEvent.ACTION_MOVE){
-				type = MOVE;
+				isMoveEvent = true;
 			}
 				
 			if(event.getActionMasked() == MotionEvent.ACTION_UP){
-				type = UP;
+				isUpEvent = true;
 			}
 			
 	}
@@ -48,15 +44,15 @@ public class SimpleMotionEvent{
 	}
 	
 	public boolean isDown(){
-		return type == DOWN;
+		return isDownEvent;
 	}
 	
 	public boolean isMove(){
-		return type == MOVE;
+		return isMoveEvent;
 	}
 	
 	public boolean isUp(){
-		return type == UP;
+		return isUpEvent;
 	}
 	
 }

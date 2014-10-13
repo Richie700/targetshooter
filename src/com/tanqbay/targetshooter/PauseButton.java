@@ -68,12 +68,12 @@ public class PauseButton extends Item {
 	
 	public void handleTouchEvent(SimpleMotionEvent event,DrawingSurface drawingSurface){
 		
-		float XCoord = event.getXCoord();
-		float YCoord = event.getYCoord();
+		float x = event.getXCoord();
+		float y = event.getYCoord();
 		
 		if(event.isDown()){
 			if(!Paused){
-				if(XCoord > surfaceWidth - (surfaceWidth / 5) && YCoord < surfaceHeight / 10){
+				if(x > surfaceWidth - (surfaceWidth / 5) && y < surfaceHeight / 10){
 					togglePause();
 					
 					Menu menu = new Menu(drawingSurface);

@@ -128,11 +128,11 @@ public class Gun extends Item {
 	
 	public void handleTouchEvent(SimpleMotionEvent event,DrawingSurface drawingSurface){
 		
-		float YCoord = event.getYCoord();
-		float XCoord = event.getXCoord();
+		float y = event.getYCoord();
+		float x = event.getXCoord();
 		
 		if(!drawingSurface.getPaused()){
-			if(YCoord > drawingSurface.getHeight() / 6.0 
+			if(y > drawingSurface.getHeight() / 6.0 
 				&& event.isDown()){
 				fire(drawingSurface);
 			}
@@ -141,15 +141,15 @@ public class Gun extends Item {
 				float middle = (float) drawingSurface.getWidth() / 2;
 				
 				
-				if(YCoord > drawingSurface.getHeight() / 2.0 
-					&& XCoord < drawingSurface.getWidth() * (4.0/5.0) 
-					&& XCoord > drawingSurface.getWidth() * (1.0/5.0)){
+				if(y > drawingSurface.getHeight() / 2.0 
+					&& x < drawingSurface.getWidth() * (4.0/5.0) 
+					&& x > drawingSurface.getWidth() * (1.0/5.0)){
 					
-					double opp = middle - XCoord;
-					double adj = getPivot()[1] -YCoord;
+					double opp = middle - x;
+					double adj = getPivot()[1] - y;
 					
 					
-					if(YCoord >= getPivot()[1]){
+					if(y >= getPivot()[1]){
 						float angle = (float) Math.atan(opp/adj);
 						
 						setAngle(-angle);
