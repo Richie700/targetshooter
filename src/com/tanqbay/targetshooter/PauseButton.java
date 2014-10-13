@@ -66,13 +66,12 @@ public class PauseButton extends Item {
 		}
 	}
 	
-	public void handleTouchEvent(MotionEvent event,DrawingSurface drawingSurface){
-		int Index = event.getActionIndex();
+	public void handleTouchEvent(SimpleMotionEvent event,DrawingSurface drawingSurface){
 		
-		float XCoord = event.getX(Index);
-		float YCoord = event.getY(Index);
+		float XCoord = event.getXCoord();
+		float YCoord = event.getYCoord();
 		
-		if(event.getActionMasked() == MotionEvent.ACTION_DOWN || event.getActionMasked() == MotionEvent.ACTION_POINTER_DOWN){
+		if(event.isDown()){
 			if(!Paused){
 				if(XCoord > surfaceWidth - (surfaceWidth / 5) && YCoord < surfaceHeight / 10){
 					togglePause();

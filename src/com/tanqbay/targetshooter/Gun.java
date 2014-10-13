@@ -126,25 +126,24 @@ public class Gun extends Item {
 		}
 	}
 	
-	public void handleTouchEvent(MotionEvent event,DrawingSurface drawingSurface){
-		int Index = event.getActionIndex();
+	public void handleTouchEvent(SimpleMotionEvent event,DrawingSurface drawingSurface){
 		
-		float XCoord = event.getX(Index);
-		float YCoord = event.getY(Index);
+		YCoord = event.getYCoord();
+		XCoord = event.getXCoord();
 		
 		if(!drawingSurface.getPaused()){
 			if(YCoord > drawingSurface.getHeight() / 6.0 
-				//&& (XCoord > drawingSurface.getWidth() * (4.0/5.0) || XCoord < drawingSurface.getWidth() * (1.0/5.0))
-				&& (event.getActionMasked() == MotionEvent.ACTION_DOWN || event.getActionMasked() == MotionEvent.ACTION_POINTER_DOWN)){
+				&& (event.isDown()){
 				fire(drawingSurface);
 			}
 			
-			if(event.getActionMasked() == MotionEvent.ACTION_MOVE){
+			if(event.isMove()){
 				float middle = (float) drawingSurface.getWidth() / 2;
 				
 				
-				//if(YCoord > drawingSurface.getHeight() - (drawingSurface.getHeight() - getPivot()[1])){
-				if(YCoord > drawingSurface.getHeight() / 2.0 && XCoord < drawingSurface.getWidth() * (4.0/5.0) && XCoord > drawingSurface.getWidth() * (1.0/5.0)){
+				if(YCoord > drawingSurface.getHeight() / 2.0 
+					&& XCoord < drawingSurface.getWidth() * (4.0/5.0) 
+					&& XCoord > drawingSurface.getWidth() * (1.0/5.0)){
 					
 					double opp = middle - XCoord;
 					double adj = getPivot()[1] -YCoord;
@@ -160,24 +159,6 @@ public class Gun extends Item {
 						setAngle((float) (-angle - Math.PI));
 					}
 					
-					/*double opp = middle - XCoord;
-					
-					
-					if(opp > 0){
-						opp = Math.min(opp,getHandleLength());
-					}else{
-						opp = Math.max(opp,-getHandleLength());
-					}
-					
-					if(YCoord >= getPivot()[1]){
-						float angle = (float) Math.asin(opp/getHandleLength());
-						
-						setAngle(angle);
-					}else{
-						float angle = (float) Math.asin(opp/getHandleLength());
-						
-						setAngle((float) (Math.PI - angle));
-					}*/
 					
 				}
 			}

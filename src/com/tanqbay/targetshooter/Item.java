@@ -30,7 +30,7 @@ public class Item implements Comparable<Item>,Parcelable {
 		
 	}
 	
-	public void handleTouchEvent(MotionEvent event,DrawingSurface drawingSurface){
+	public void handleTouchEvent(SimpleMotionEvent event,DrawingSurface drawingSurface){
 	}
 	
 	public int getType(){
@@ -98,5 +98,9 @@ public class Item implements Comparable<Item>,Parcelable {
      
      private Item(Parcel in) {
          //mData = in.readInt();
+     }
+     
+     protected SimpleMotionEvent getEvent(MotionEvent event){
+     		return new SimpleMotionEvent(event);
      }
 }
