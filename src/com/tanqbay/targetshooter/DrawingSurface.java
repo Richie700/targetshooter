@@ -301,36 +301,18 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 	}
 	
 	public boolean onTouchEvent(MotionEvent event){
+		
+		SimpleMotionEvent simpleEvent = new SimpleMotionEvent(event);
+		
 		if(Finished){
-			if(event.getActionMasked() == MotionEvent.ACTION_DOWN || event.getActionMasked() == MotionEvent.ACTION_POINTER_DOWN){
+			if(event.isDown()){
 				setupGame();
 			}
 		}else{
-			int Index = event.getActionIndex();
-				
-			float XCoord = event.getX(Index);
-			float YCoord = event.getY(Index);
-			
 			for(int i = 0;i < items.size();i++){
-				items.get(i).handleTouchEvent(new SimpleMotionEvent(event),this);
+				items.get(i).handleTouchEvent(simpleEvent,this);
 			}
 			
-			//gun.handleTouchEvent(event,this);
-			
-			//displayContainer.getPauseButton().handleTouchEvent(event,this);
-			
-			if(event.getActionMasked() == MotionEvent.ACTION_DOWN || event.getActionMasked() == MotionEvent.ACTION_POINTER_DOWN){
-				
-			}
-			
-			
-			if(event.getActionMasked() == MotionEvent.ACTION_MOVE){
-				
-			}
-				
-			if(event.getActionMasked() == MotionEvent.ACTION_UP){
-				
-			}
 		}
 		return true;
 	}
