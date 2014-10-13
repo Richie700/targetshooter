@@ -305,7 +305,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 		SimpleMotionEvent simpleEvent = new SimpleMotionEvent(event);
 		
 		if(Finished){
-			if(event.isDown()){
+			if(simpleEvent.isDown()){
 				setupGame();
 			}
 		}else{
