@@ -31,10 +31,6 @@ public class SimpleMotionEvent{
 			
 	}
 	
-	public int getType(){
-		return type;
-	}
-	
 	public float getYCoord(){
 		return yCoord;
 	}
