@@ -38,18 +38,18 @@ public class Wave{
 	 
 	}
 	
-	public Target getNextTarget(){
+	public Target getNextTarget(DrawingSurface drawingSurface){
 	   
 	   float shipTypeSelector = rand.nextFloat();
 	   
 	   Target nextTarget;
 	   
 	   if(shipTypeSelector > 0.80){
-	      nextTarget = (Target) new Bomber(this);
+	      nextTarget = (Target) new Bomber(drawingSurface);
 	   }else if(shipTypeSelector > 0.60){
-	      nextTarget = (Target) new Ship(this);
+	      nextTarget = (Target) new Ship(drawingSurface);
 	   }else{
-	      nextTarget = (Target) new GunShip(this);
+	      nextTarget = (Target) new GunShip(drawingSurface);
 	   }
 	   
 	   return nextTarget;
