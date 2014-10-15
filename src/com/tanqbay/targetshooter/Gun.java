@@ -74,9 +74,6 @@ public class Gun extends Item {
 		
 		canvas.restore();
 		
-		/*for(int i = 0;i < lasers.size();i++){
-			lasers.get(i).drawSelf(canvas);
-		}*/
 	}
 	
 	
@@ -133,7 +130,6 @@ public class Gun extends Item {
 						setAngle((float) (-angle - Math.PI));
 					}
 					
-					
 				}
 			}
 		}
@@ -148,8 +144,6 @@ public class Gun extends Item {
 			timeSinceLastShot = 0;
 		}
 	}
-	
-	
 	
 	public double[] getBarrelPosition(){
 		
@@ -200,55 +194,5 @@ public class Gun extends Item {
 	public boolean checkForCollision(){
 		return true;
 	}
-	
-	/*public boolean checkForHit(ArrayList<Item> items){
-		
-		boolean hitFound = false;
-		
-		LaserBeam laser;
-		Target target;
-		int targetHit = -1;
-		int laserHit = -1;
-		
-		for(int i = 0;i < lasers.size();i++){
-			try{
-				laser = lasers.get(i);
-				for(int j = 0;j < items.size();j++){
-					try{
-						if(items.get(j).getType() == Item.TARGET_TYPE){
-							target = (Target) items.get(j);
-							if(!target.getHit() && !laser.getHit() && target.pointInside(laser.getEnd())){
-								targetHit = j;
-								laserHit = i;
-							}
-						}
-					}catch(IndexOutOfBoundsException e){
-						Log.i("Why","Why does this happen");
-					}catch(NullPointerException e){
-						
-					}
-				}
-			}catch(IndexOutOfBoundsException e){
-				Log.i("Why","Why does this happen here also");
-			}
-		}
-		
-		if(laserHit > -1){
-			try{
-				lasers.get(laserHit).setHit();
-				hitFound = true;
-			}catch(IndexOutOfBoundsException e){
-				
-			}
-		}
-		if(targetHit > -1){
-			try{
-				((Target) items.get(targetHit)).setHit();
-				hitFound = true;
-			}catch(IndexOutOfBoundsException e){
-			}
-		}
-		
-		return hitFound;
-	}*/
+
 }

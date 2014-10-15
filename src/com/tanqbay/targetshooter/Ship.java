@@ -46,35 +46,7 @@ public class Ship extends SmartTarget {
 			
 			canvas.drawBitmap(shipImage,sourceRect,rect,new Paint());
 			
-			canvas.restore();
-			
-			/*destinationRotation = (float) Math.asin((Position[0] - Destination[0]) / (Position[1] - Destination[1]));
-			
-			if(Float.isNaN(destinationRotation)){
-				destinationRotation = (float) Math.acos((Position[1] - Destination[1]) / (Position[0] - Destination[0]));
-				if(Destination[0] < Position[0]){
-					destinationRotation = destinationRotation + (float) Math.PI;
-				}
-			}
-			
-			destinationRotation = destinationRotation + (float) (Math.PI);
-			*/
-			
-			
-			//canvas.rotate((float) ((angle * (180/Math.PI)) + 180),Position[0],Position[1]);
-			
-			
-			
-			//canvas.rotate((float) (-1 * angle * (180/Math.PI)),Position[0],Position[1]);
-			//canvas.translate(-Position[0],-Position[1]);
-			//canvas.restore();
-			
-			//canvas.drawCircle(Position[0],Position[1],radius,paint);
-			
-			//paint.setStyle(Paint.Style.STROKE);
-			
-			//canvas.drawCircle(Destination[0],Destination[1],radius,paint);
-			 
+			canvas.restore(); 
 			 
 		}
 	}

@@ -162,12 +162,11 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 			items.add(waveComplete);
 			
 			wave = wave.getNextWave();
-			
-			
 		}
 		
+		items.add(wave.getNextTarget());
 		
-		if(wave.addShip()){
+		/*if(wave.addShip()){
 			Ship ship = new Ship(this);
 			
 			items.add(ship);
@@ -175,7 +174,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 			Bomber bomber = new Bomber(this);
 			
 			items.add(bomber);
-		}
+		}*/
 		
 		wave.adjustTargetNumber();
 		
@@ -228,9 +227,6 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 		
 		if(!Finished){
 			double timeDifference = (gameTime - timer) / 1000;
-			
-			
-			Target target;
 			
 			for(int i = items.size() - 1;i >= 0;i--){
 				try{

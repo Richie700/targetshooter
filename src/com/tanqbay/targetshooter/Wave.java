@@ -38,7 +38,27 @@ public class Wave{
 	 
 	}
 	
+	public Target getNextTarget(){
+	   
+	   float shipTypeSelector = rand.nextFloat();
+	   
+	   Target nextTarget
+	   
+	   if(shipTypeSelector > 0.80){
+	      nextTarget = (Target) new Bomber(this);
+	   }else if(shipTypeSelector > 0.60){
+	      nextTarget = (Target) new Ship(this);
+	   }else{
+	      nextTarget = (Target) new GunShip(this);
+	   }
+	   
+	   return nextTarget;
+	}
+	
 	public boolean addShip(){
+		
+		
+		
 		return rand.nextFloat() < 0.8;
 	}
 	
