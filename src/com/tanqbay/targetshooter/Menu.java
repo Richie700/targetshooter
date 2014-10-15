@@ -45,15 +45,14 @@ public class Menu extends Item {
 		
 	}
 	
-	public void handleTouchEvent(MotionEvent event,DrawingSurface drawingSurface){
-		int Index = event.getActionIndex();
+	public void handleTouchEvent(SimpleMotionEvent event,DrawingSurface drawingSurface){
 		
-		float XCoord = event.getX(Index);
-		float YCoord = event.getY(Index);
+		float x = event.getXCoord();
+		float y = event.getYCoord();
 		
-		if(event.getActionMasked() == MotionEvent.ACTION_DOWN || event.getActionMasked() == MotionEvent.ACTION_POINTER_DOWN){
+		if(event.isDown()){
 			 
-			 if(YCoord > surfaceHeight / 2){
+			 if(y > surfaceHeight / 2){
 			 		setReadyToBeRemoved(true);
 			 	drawingSurface.getPauseButton().UnPauseGame();
 			 }

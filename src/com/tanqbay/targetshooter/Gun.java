@@ -79,32 +79,6 @@ public class Gun extends Item {
 		}*/
 	}
 	
-	/*public void drawSelf2(Canvas canvas){ 
-		
-		double gunLength = length - handleLength;
-		
-		double startX = (FloatMath.sin((float) -angle) * handleLength) + Pivot[0];
-		double startY = (FloatMath.cos((float) -angle) * handleLength) + Pivot[1];
-		double endX = (FloatMath.sin((float) angle) * gunLength) + Pivot[0];
-		double endY = Pivot[1] - (FloatMath.cos((float) angle) * gunLength);
-		
-		paint.setColor(0xff000099);
-		canvas.drawLine((float) startX,(float) startY,(float) endX,(float) endY,paint);
-		
-		paint.setColor(0x88aaaaaa);
-		
-		
-		RectF shieldBounds = new RectF((float) (getPivot()[0] - pivotRadius),
-										(float) (getPivot()[1] - pivotRadius),
-										(float) (getPivot()[0] + pivotRadius),
-										(float) (getPivot()[1] + pivotRadius));
-
-		canvas.drawArc(shieldBounds,(float) (angle * (180 / Math.PI)),-180,true,paint);
-		
-		for(int i = 0;i < lasers.size();i++){
-			lasers.get(i).drawSelf(canvas);
-		}
-	}*/
 	
 	public void update(double timeDifference,DrawingSurface drawingSurface){
 		
@@ -227,7 +201,7 @@ public class Gun extends Item {
 		return true;
 	}
 	
-	public boolean checkForHit(ArrayList<Item> items){
+	/*public boolean checkForHit(ArrayList<Item> items){
 		
 		boolean hitFound = false;
 		
@@ -276,5 +250,5 @@ public class Gun extends Item {
 		}
 		
 		return hitFound;
-	}
+	}*/
 }
