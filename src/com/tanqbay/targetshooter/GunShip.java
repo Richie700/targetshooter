@@ -1,4 +1,4 @@
-package com.company.example;
+package com.tanqbay.targetshooter;
 
 public class GunShip extends Ship {
    public GunShip extends Ship() {

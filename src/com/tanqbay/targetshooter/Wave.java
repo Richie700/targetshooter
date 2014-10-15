@@ -42,7 +42,7 @@ public class Wave{
 	   
 	   float shipTypeSelector = rand.nextFloat();
 	   
-	   Target nextTarget
+	   Target nextTarget;
 	   
 	   if(shipTypeSelector > 0.80){
 	      nextTarget = (Target) new Bomber(this);
