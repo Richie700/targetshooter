@@ -45,22 +45,16 @@ public class Wave{
 	   Target nextTarget;
 	   
 	   if(shipTypeSelector > 0.80){
-	      nextTarget = (Target) new Bomber(drawingSurface);
+	      nextTarget = new Bomber(drawingSurface);
 	   }else if(shipTypeSelector > 0.60){
-	      nextTarget = (Target) new Ship(drawingSurface);
+	      nextTarget = new Ship(drawingSurface);
 	   }else{
-	      nextTarget = (Target) new GunShip(drawingSurface);
+	      nextTarget = new GunShip(drawingSurface);
 	   }
 	   
 	   return nextTarget;
 	}
 	
-	public boolean addShip(){
-		
-		
-		
-		return rand.nextFloat() < 0.8;
-	}
 	
 	public void adjustTargetNumber(){
 		if(numberOfTargets < highestNumberOfTargets && rand.nextFloat() < 0.1){
