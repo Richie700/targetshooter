@@ -176,12 +176,12 @@ public class SmartTarget extends Target {
    							
    							Destination = new float[]{newX,newY};
    							
-   						
+   						}
    					}
    				}catch(NullPointerException e){
    					e.printStackTrace();
    				}
-   			}
+   			
    		}
 		}
 	}
