@@ -3,6 +3,7 @@ package com.tanqbay.targetshooter;
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;
 import android.content.Context;
+import java.lang.Error;
 
 public class AnimationThread extends Thread {
 	private SurfaceHolder surfaceHolder;
@@ -56,6 +57,10 @@ public class AnimationThread extends Thread {
 				DebugNotifier.notify(e2,context);
 
 
+			}catch(Error e3){
+			   DebugNotifier.notify(e3,context);
+			   
+			   throw e3;
 			}
 		}    		
 	}
