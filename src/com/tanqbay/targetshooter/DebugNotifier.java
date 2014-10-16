@@ -16,7 +16,7 @@ public class DebugNotifier{
 	public DebugNotifier(){
 	}
 	
-	public static void notify(Exception e,Context context){
+	public static void notify(Throwable e,Context context){
 		
 		String message = e.getMessage();	
 
