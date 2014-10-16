@@ -11,7 +11,6 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.util.FloatMath;
 import android.util.Log;
-import android.view.MotionEvent;
 
 public class Gun extends Item {
 	
@@ -175,9 +174,9 @@ public class Gun extends Item {
 		return Pivot;
 	}
 	
-	public ArrayList<LaserBeam> getLasers(){
+	/*public ArrayList<LaserBeam> getLasers(){
 		return lasers;
-	}
+	}*/
 	
 	public int getType(){
 		return GUN_TYPE;
