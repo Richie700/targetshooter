@@ -174,9 +174,9 @@ public class Gun extends Item {
 		return Pivot;
 	}
 	
-	/*public ArrayList<LaserBeam> getLasers(){
+	public ArrayList<LaserBeam> getLasers(){
 		return lasers;
-	}*/
+	}
 	
 	public int getType(){
 		return GUN_TYPE;
