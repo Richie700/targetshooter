@@ -140,7 +140,7 @@ public class SmartTarget extends Target {
 			for(int i = 0;i < items.size();i++){
 				try{
 				 if(items.get(i).getType == LASERBEAM_TYPE){
-   					laser = (Laser) items.get(i);
+   					laser = (LaserBeam) items.get(i);
    					end = laser.getEnd();
    					laserAngle = laser.getAngle();
    					dtl = distance(Position[0],Position[1],end[0],end[1]);
