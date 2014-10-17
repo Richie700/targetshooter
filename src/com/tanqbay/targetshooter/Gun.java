@@ -88,7 +88,7 @@ public class Gun extends Item {
 		if(!drawingSurface.getPaused()){
 			if(y > drawingSurface.getHeight() / 6.0 
 				&& event.isDown()){
-			   laserBank.fire(getBarrelPosition(),-angle,drawingSurface);
+			   laserBank.fire(drawingSurface,getBarrelPosition(),-angle);
 			}
 			
 			if(event.isMove()){
