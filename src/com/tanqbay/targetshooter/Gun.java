@@ -21,7 +21,7 @@ public class Gun extends Item {
 	private double handleLength;
 	private double angle;
 	
-	LaserBank laserBank;
+	private LaserBank laserBank;
 	
 	private Paint paint;
 	private Bitmap gun;
