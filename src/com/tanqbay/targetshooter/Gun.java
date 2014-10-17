@@ -21,12 +21,8 @@ public class Gun extends Item {
 	private double handleLength;
 	private double angle;
 	
-	private ArrayList<LaserBeam> lasers = new ArrayList<LaserBeam>();
-	private float laserSpeed;
-	private double rateOfFire = 0.500;
-	private double lastShot;
-	private double timeSinceLastShot = 0;
-	//private float surfaceHeight;
+	LaserBank laserBank;
+	
 	private Paint paint;
 	private Bitmap gun;
 	
@@ -39,7 +35,7 @@ public class Gun extends Item {
 		pivotRadius = drawingSurface.getWidth() / 20.0;
 		angle = (float) 0.1;
 		
-		laserSpeed = 200;
+		laserBank = new LaserBank(200,0.500);
 		
 		paint = new Paint();
 		paint.setStrokeWidth(7);
@@ -78,22 +74,10 @@ public class Gun extends Item {
 	
 	public void update(double timeDifference,DrawingSurface drawingSurface){
 		
-		//Log.i("Lasers",String.valueOf(lasers.size()));
-		
 		if(!drawingSurface.getPaused()){
-			timeSinceLastShot += timeDifference;
+		   laserBank.updateTime(timeDifference);
 		}
 		
-		for(int i = lasers.size() - 1;i >= 0;i--){
-			try{
-				//lasers.get(i).update(timeDifference);
-				if(lasers.get(i).getHit() || lasers.get(i).reachedLimit()){
-					lasers.remove(i);
-				}
-			}catch(IndexOutOfBoundsException e){
-				
-			}
-		}
 	}
 	
 	public void handleTouchEvent(SimpleMotionEvent event,DrawingSurface drawingSurface){
@@ -104,7 +88,7 @@ public class Gun extends Item {
 		if(!drawingSurface.getPaused()){
 			if(y > drawingSurface.getHeight() / 6.0 
 				&& event.isDown()){
-				fire(drawingSurface);
+			   laserBank.fire(getBarrelPosition(),-angle,drawingSurface);
 			}
 			
 			if(event.isMove()){
@@ -134,15 +118,6 @@ public class Gun extends Item {
 		}
 	}
 	
-	public void fire(DrawingSurface drawingSurface){
-		if(timeSinceLastShot >= rateOfFire){
-			LaserBeam laser = new LaserBeam(getBarrelPosition(),laserSpeed,-angle,drawingSurface);
-			lasers.add(laser);
-			drawingSurface.getItems().add(laser);
-			lastShot = System.currentTimeMillis();
-			timeSinceLastShot = 0;
-		}
-	}
 	
 	public double[] getBarrelPosition(){
 		
@@ -172,10 +147,6 @@ public class Gun extends Item {
 	
 	public float[] getPivot(){
 		return Pivot;
-	}
-	
-	public ArrayList<LaserBeam> getLasers(){
-		return lasers;
 	}
 	
 	public int getType(){
