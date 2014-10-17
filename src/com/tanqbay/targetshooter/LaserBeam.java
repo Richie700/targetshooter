@@ -19,6 +19,7 @@ public class LaserBeam extends Item {
 	private double range;
 	private boolean hit = false;
 	private Paint paint;
+	private int type = LASERBEAM_TYPE;
 	
 	public LaserBeam(double[] start, double speed, double angle, DrawingSurface drawingSurface){
 		super(drawingSurface);
@@ -95,7 +96,11 @@ public class LaserBeam extends Item {
 		return angle;
 	}
 	
+	public void setType(int newType){
+	   type = newType;
+	}
+	
 	public int getType(){
-		return LASERBEAM_TYPE;
+		return type;
 	}
 }

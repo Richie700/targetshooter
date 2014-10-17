@@ -11,6 +11,7 @@ public class Item implements Comparable<Item>,Parcelable {
 	public static final int GUN_TYPE = 1;
 	public static final int TARGET_TYPE = 2;
 	public static final int LASERBEAM_TYPE = 3;
+	public static final int ENEMYLASERBEAM_TYPE = 4;
 	
 	protected boolean readyToBeRemoved = false;
 	protected int drawOrder = 0;
