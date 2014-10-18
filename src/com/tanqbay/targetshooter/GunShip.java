@@ -9,7 +9,7 @@ public class GunShip extends Ship {
       
       radius = 35;
       
-      laserBank = new LaserBank(ENEMYLASERBEAM_TYPE,200,0.500);
+      laserBank = new LaserBank(ENEMYLASERBEAM_TYPE,200,1.500);
    }
    
    public void update(double timeDifference,DrawingSurface drawingSurface){
@@ -18,7 +18,7 @@ public class GunShip extends Ship {
       if(!drawingSurface.getPaused()){
       		   laserBank.updateTime(timeDifference);
       		   
-      		   laserBank.fire(drawingSurface,new double[]{(double) getPosition()[0],(double) getPosition()[1]},1);
+      		   laserBank.fire(drawingSurface,new double[]{(double) getPosition()[0],(double) getPosition()[1]},Math.PI);
       }
    }
 }
