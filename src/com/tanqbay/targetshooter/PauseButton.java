@@ -49,7 +49,7 @@ public class PauseButton extends Item {
 		float y = event.getYCoord();
 		
 		if(event.isDown()){
-			if(!Paused){
+			//if(!Paused){
 				if(x > surfaceWidth - (surfaceWidth / 5) && y < surfaceHeight / 10){
 					game.togglePause();
 					
@@ -58,7 +58,7 @@ public class PauseButton extends Item {
 					drawingSurface.getItems().add(menu);
 					
 				}
-		}
+		//}
 	}
 }
 	
