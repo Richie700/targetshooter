@@ -38,7 +38,21 @@ public class Wave{
 	 
 	}
 	
-	public Target getNextTarget(DrawingSurface drawingSurface){
+	public addTargetIfNeeded(DrawingSurface drawingSurface,ArrayList<Item> items){
+	   if(shouldAddTarget(items)){
+   				addTarget(drawingSurface,items);
+   	}
+	}
+	
+	private void addTarget(DrawingSurface drawingSurface,ArrayList<Item> items){
+		
+		items.add((Item) getNextTarget(drawingSurface));
+		
+		adjustTargetNumber();
+		
+	}
+	
+	private Target getNextTarget(DrawingSurface drawingSurface){
 	   
 	   float shipTypeSelector = rand.nextFloat();
 	   
@@ -56,7 +70,7 @@ public class Wave{
 	}
 	
 	
-	public void adjustTargetNumber(){
+	private void adjustTargetNumber(){
 		if(numberOfTargets < highestNumberOfTargets && rand.nextFloat() < 0.1){
 			numberOfTargets++;
 		}
@@ -68,7 +82,7 @@ public class Wave{
 		
 	}
 	
-	public boolean shouldAddTarget(ArrayList<Item> items){
+	private boolean shouldAddTarget(ArrayList<Item> items){
 			return currentNumberOfTargets(items) < numberOfTargets;
 	}
 	

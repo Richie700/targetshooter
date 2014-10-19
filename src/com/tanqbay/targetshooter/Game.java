@@ -1,5 +1,7 @@
 package com.tanqbay.targetshooter;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -18,7 +20,7 @@ public class Game {
    
    public Game(DrawingSurface drawingSurface) {
       
-      hits = 0;
+     hits = 0;
    		
    			wave = new Wave();
    			
@@ -51,12 +53,20 @@ public class Game {
 	}
  
  public void update(DrawingSurface drawingSurface){
-    if(wave.shouldAddTarget(drawingSurface.getItems())){
-   				addTarget(drawingSurface);
-   			}
+    
+    ArrayList<Item> items = drawingSurface.getItems();
+    
+    wave.addTargetIfNeeded(drawingSurface,items);
+   	
+   	if(wave.isComplete()){
+   			WaveComplete waveComplete = new WaveComplete(drawingSurface,wave.getWaveNumber());
+   			items.add(waveComplete);
    			
+   			wave = wave.getNextWave();
+   		}
+   	
    			if(city.getShieldStrength() <= 0){
-   				gameOver();
+   				gameOver(drawingSurface,items);
    			}
    			
    			score.setHits(hits);
@@ -64,23 +74,9 @@ public class Game {
    			
  }
  
- private void addTarget(DrawingSurface drawingSurface){
-		
-		
-		if(wave.isComplete()){
-			WaveComplete waveComplete = new WaveComplete(drawingSurface,wave.getWaveNumber());
-			drawingSurface.getItems().add(waveComplete);
-			
-			wave = wave.getNextWave();
-		}
-		
-		drawingSurface.getItems().add((Item) wave.getNextTarget(drawingSurface));
-		
-		wave.adjustTargetNumber();
-		
-	}
  
- private void gameOver(DrawingSurface drawingSurface){
+ 
+ private void gameOver(DrawingSurface drawingSurface,ArrayList<Item> items){
 		//getPauseButton().PauseGame();
 		Finished = true;
 		boolean newHighScoreReached = false;

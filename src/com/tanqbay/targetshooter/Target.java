@@ -156,10 +156,6 @@ public class Target extends Item {
 		drawingSurface.getCity().reduceShield(10);
 	}
 	
-	public boolean getReachedBottom(){
-		return reachedBottom;
-	}
-	
 	public int getType(){
 		return TARGET_TYPE;
 	}
