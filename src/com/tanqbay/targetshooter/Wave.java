@@ -1,6 +1,7 @@
 package com.tanqbay.targetshooter;
 
 import java.util.Random;
+import java.util.ArrayList;
 
 public class Wave{
 	

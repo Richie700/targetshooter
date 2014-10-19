@@ -85,7 +85,7 @@ public class Target extends Item {
 			Position[1] = Position[1] + (Velocity[1] * (float) timeDifference);
 			
 			
-			if(Position[1] > drawingSurface.getCity().getShieldPosition()){
+			if(Position[1] > drawingSurface.getGame().getCity().getShieldPosition()){
 				setReachedBottom(drawingSurface);
 				setReadyToBeRemoved(true);
 			}
@@ -99,7 +99,7 @@ public class Target extends Item {
 				if(item.getType() == LASERBEAM_TYPE){
 					setReadyToBeRemoved(true);
 					item.setReadyToBeRemoved(true);
-					drawingSurface.addHit();
+					drawingSurface.getGame().addHit();
 				}else{
 					avoidCollision(item);
 				}
@@ -153,7 +153,7 @@ public class Target extends Item {
 	
 	public void setReachedBottom(DrawingSurface drawingSurface){
 		reachedBottom = true;
-		drawingSurface.getCity().reduceShield(10);
+		drawingSurface.getGame().getCity().reduceShield(10);
 	}
 	
 	public int getType(){

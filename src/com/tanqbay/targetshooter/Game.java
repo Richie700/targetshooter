@@ -106,6 +106,10 @@ public class Game {
 		return gun;
 	}
 	
+	public City getCity(){
+		return city;
+	}
+	
 	public void addHit(){
 		hits++;
 	}
