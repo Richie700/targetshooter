@@ -52,7 +52,7 @@ public class Game {
  
  public void update(DrawingSurface drawingSurface){
     if(wave.shouldAddTarget(drawingSurface.getItems())){
-   				addTarget(DrawingSurface drawingSurface);
+   				addTarget(drawingSurface);
    			}
    			
    			if(city.getShieldStrength() <= 0){
