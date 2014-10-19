@@ -38,7 +38,7 @@ public class Wave{
 	 
 	}
 	
-	public addTargetIfNeeded(DrawingSurface drawingSurface,ArrayList<Item> items){
+	public void addTargetIfNeeded(DrawingSurface drawingSurface,ArrayList<Item> items){
 	   if(shouldAddTarget(items)){
    				addTarget(drawingSurface,items);
    	}
