@@ -30,20 +30,19 @@ public class SmartTarget extends Target {
 	
 	
 	public void update(double timeDifference,DrawingSurface drawingSurface){
-		if(timeDifference > 0){
-   		super.update(timeDifference,drawingSurface);
-   			
-   		calculateDestinationRotation();
-   		calculateDestination(drawingSurface);
-   			
-   		if(Math.abs(rotation - destinationRotation) > Epsilon){
-   		   if(destinationRotation > rotation){
-   		      rotation += 0.03;
-   		   }else{
-   			      rotation -= 0.03;
-   		   }  
-   		 }
+		super.update(timeDifference,drawingSurface);
+			
+		calculateDestinationRotation();
+		calculateDestination(drawingSurface);
+			
+		if(Math.abs(rotation - destinationRotation) > Epsilon){
+		   if(destinationRotation > rotation){
+		      rotation += 0.03;
+		   }else{
+			      rotation -= 0.03;
+		   }  
 		 }
+		
 	}
 	
 	protected void calculateDestinationRotation(){
