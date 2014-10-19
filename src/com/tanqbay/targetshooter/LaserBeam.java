@@ -39,7 +39,9 @@ public class LaserBeam extends Item {
 	}
 	
 	public void update(double timeDifference,DrawingSurface drawingSurface){
-		if(!drawingSurface.getPaused() && !hitTarget() && !reachedLimit()){
+		if(reachedLimit()){
+		   setReadyToBeRemoved(true);
+		}
 			
 			length =  actualLength * ((currentStart[1])/start[1]);
 			width =  actualWidth * ((currentStart[1])/start[1]);
@@ -52,7 +54,7 @@ public class LaserBeam extends Item {
 			if(distance(currentStart[0],currentStart[1],currentEnd[0],currentEnd[1]) > length){
 				currentStart = new double[]{(currentStart[0] + XChange),(currentStart[1] + YChange)};
 			}
-		}
+		
 	}
 	
 	public void drawSelf(Canvas canvas){

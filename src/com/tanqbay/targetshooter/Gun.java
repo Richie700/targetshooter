@@ -74,9 +74,7 @@ public class Gun extends Item {
 	
 	public void update(double timeDifference,DrawingSurface drawingSurface){
 		
-		if(!drawingSurface.getPaused()){
-		   laserBank.updateTime(timeDifference);
-		}
+    laserBank.updateTime(timeDifference);
 		
 	}
 	
@@ -85,7 +83,7 @@ public class Gun extends Item {
 		float y = event.getYCoord();
 		float x = event.getXCoord();
 		
-		if(!drawingSurface.getPaused()){
+		//if(!drawingSurface.getPaused()){
 			if(y > drawingSurface.getHeight() / 6.0 
 				&& event.isDown()){
 			   laserBank.fire(drawingSurface,getBarrelPosition(),-angle);
@@ -115,7 +113,7 @@ public class Gun extends Item {
 					
 				}
 			}
-		}
+		//}
 	}
 	
 	

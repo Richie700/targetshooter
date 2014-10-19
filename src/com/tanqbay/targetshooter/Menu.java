@@ -8,9 +8,12 @@ import android.view.MotionEvent;
 public class Menu extends Item {
 	
 	private Paint paint;
+	private Game game;
 	
 	public Menu(DrawingSurface drawingSurface){
 		super(drawingSurface);
+		
+		game = drawingSurface.getGame();
 		
 		paint = new Paint();
 		
@@ -54,7 +57,7 @@ public class Menu extends Item {
 			 
 			 if(y > surfaceHeight / 2){
 			 		setReadyToBeRemoved(true);
-			 	drawingSurface.getPauseButton().UnPauseGame();
+			 	game.unPause();
 			 }
 			}
 	}

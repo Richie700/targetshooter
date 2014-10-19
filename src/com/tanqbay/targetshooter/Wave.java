@@ -68,8 +68,8 @@ public class Wave{
 		
 	}
 	
-	public boolean shouldAddTarget(int currentNumber){
-			return currentNumber < numberOfTargets;
+	public boolean shouldAddTarget(ArrayList<Item> items){
+			return currentNumberOfTargets(items) < numberOfTargets;
 	}
 	
 	public boolean isComplete(){
@@ -84,5 +84,21 @@ public class Wave{
 		return new Wave(++waveNumber,++lowestNumberOfTargets,++highestNumberOfTargets,totalTargets + 1);
 	}
 	
+	private int currentNumberOfTargets(ArrayList<Item> items){
+		
+		int Total = 0;
+		
+		for(int i = 0;i < items.size();i++){
+			try{
+				if(items.get(i).getType() == Item.TARGET_TYPE){
+					Total++;
+				}
+			}catch(IndexOutOfBoundsException e){
+				
+			}
+		}
+		
+		return Total;
+	}
 	
 }

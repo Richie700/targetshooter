@@ -3,9 +3,7 @@ package com.tanqbay.targetshooter;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
+
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -45,20 +43,14 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 	public SurfaceHolder drawingSurfaceHolder;
 	private AnimationThread thread; 
 	private double timer;
-	
-	
 	private ArrayList<Item> items = new ArrayList<Item>();
-	
-	private Gun gun;
-	private City city;
-	private DisplayContainer displayContainer;
-	
-	private boolean Finished = false;
-	private Wave wave;
+	private Game game;
 	private Bitmap background;
-	private int hits;
 	//private AdView NextAd;
 	//private boolean ShowPopup = true;
+	
+	
+	
 	
 	public DrawingSurface(Context context) {
 		super(context);
@@ -88,20 +80,12 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 	
 	@Override
 	public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-		
-		Log.i("Changed","Changed");
-		
 		createdOrChanged();
-		
 	}
 	
 	@Override
 	public void surfaceCreated(SurfaceHolder holder) {
-		
-		Log.i("Created","Created");
-		
 		createdOrChanged();
-		
 	}
 	
 	private void createdOrChanged(){
@@ -114,37 +98,18 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 				this.thread.setRunning(false);
 			}
 				
-			hits = 0;
-		
-			setupWave();
-		
-			createItems();
+				items = new ArrayList<Item>();
+				
+				game = new Game(this);
 		
 			startAnimationThread();
-			Finished = false;
+			
 		}catch(Exception e){
 			DebugNotifier.notify(e,getContext());		
 		}
 	}
 	
-	private void setupWave(){
-		wave = new Wave();
-	}
 	
-	private void createItems(){
-		items = new ArrayList<Item>();
-		
-		displayContainer = new DisplayContainer(this);
-		items.add(displayContainer);
-		
-		gun = new Gun(this);
-		items.add(gun);
-		
-		city = new City(this);
-		items.add(city);
-		
-		
-	}
 	
 	private void startAnimationThread(){
 		this.thread = new AnimationThread(drawingSurfaceHolder,this,getContext());
@@ -154,45 +119,9 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 		this.thread.start();
 	}
 	
-	private void addTarget(){
-		
-		
-		if(wave.isComplete()){
-			WaveComplete waveComplete = new WaveComplete(this,wave.getWaveNumber());
-			items.add(waveComplete);
-			
-			wave = wave.getNextWave();
-		}
-		
-		items.add((Item) wave.getNextTarget(this));
-		
-		/*if(wave.addShip()){
-			Ship ship = new Ship(this);
-			
-			items.add(ship);
-		}else{
-			Bomber bomber = new Bomber(this);
-			
-			items.add(bomber);
-		}*/
-		
-		wave.adjustTargetNumber();
-		
-		Collections.sort(items);
-	}
-	
 	@Override
 	public void surfaceDestroyed(SurfaceHolder holder) {
-		
-		Log.i("Surface","Destroyed");
-
-		displayContainer.getPauseButton().PauseGame();
-		
-		//thread = null;
-		
-		//thread.interrupt();
-		
-		((MainActivity) getContext()).finish();
+   ((MainActivity) getContext()).finish();
 	}
 
 	@Override
@@ -225,13 +154,16 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 	@Override
 	public void onUpdate(double gameTime) {
 		
-		if(!Finished){
-			double timeDifference = (gameTime - timer) / 1000;
+		double timeDifference = 0;
+		
+		if(!game.getFinished()){
+			if(!game.getPaused()){
+			   timeDifference = (gameTime - timer) / 1000;
+			}
 			
 			for(int i = items.size() - 1;i >= 0;i--){
 				try{
 					items.get(i).update(timeDifference,this);
-					//Log.i("Type",String.valueOf(items.get(i).getType()));
 					
 					if(items.get(i).isReadyToBeRemoved()){
 						items.remove(i);
@@ -246,61 +178,20 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 		
 			timer = gameTime;
 			
-			if(wave.shouldAddTarget(numberOfTargets())){
-				addTarget();
-			}
+			game.update(this);
 			
-			if(city.getShieldStrength() <= 0){
-				gameOver();
-			}
-		}
-		
-	}
-	
-	private void gameOver(){
-		getPauseButton().PauseGame();
-		Finished = true;
-		boolean newHighScoreReached = false;
-		
-		SharedPreferences settings = ((Activity) getContext()).getPreferences(Context.MODE_PRIVATE);
-		int currentHighScore = settings.getInt("HighScore",0);
-		
-		if(currentHighScore < hits){
-			SharedPreferences.Editor editor = settings.edit();
-			editor.putInt("HighScore",hits);
-			editor.commit();
+			Collections.sort(items);
 			
-			currentHighScore = hits;
-			newHighScoreReached = true;
 		}
-		
-		LoseDisplay loseDisplay = new LoseDisplay(this,newHighScoreReached,currentHighScore,hits);
-		items.add(loseDisplay);
 		
 	}
 	
-	private int numberOfTargets(){
 		
-		int Total = 0;
-		
-		for(int i = 0;i < items.size();i++){
-			try{
-				if(items.get(i).getType() == Item.TARGET_TYPE){
-					Total++;
-				}
-			}catch(IndexOutOfBoundsException e){
-				
-			}
-		}
-		
-		return Total;
-	}
-	
 	public boolean onTouchEvent(MotionEvent event){
 		
 		SimpleMotionEvent simpleEvent = new SimpleMotionEvent(event);
 		
-		if(Finished){
+		if(game.getFinished()){
 			if(simpleEvent.isDown()){
 				setupGame();
 			}
@@ -313,31 +204,12 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 		return true;
 	}
 	
-	public boolean getPaused(){
-		return displayContainer.getPauseButton().getPaused();
-	}
-	
 	public ArrayList<Item> getItems(){
 		return items;
 	}
 	
-	public Gun getGun(){
-		return gun;
+	public Game getGame(){
+	   return game;
 	}
 	
-	public int getHits(){
-		return hits;
-	}
-	
-	public void addHit(){
-		hits++;
-	}
-	
-	public PauseButton getPauseButton(){
-		return displayContainer.getPauseButton();
-	}
-	
-	public City getCity(){
-		return city; 
-	}
 }

@@ -60,11 +60,7 @@ public class Bomber extends Ship {
 	public void update(double timeDifference,DrawingSurface drawingSurface){
 		super.update(timeDifference,drawingSurface);
 		
-		if(!drawingSurface.getPaused()){
-			timeSinceLastDrop += timeDifference;
-		}
-		
-		//calculateDestination();
+		timeSinceLastDrop += timeDifference;
 		
 		if(Position[1] < 0 - distanceToBombReload){
 			reloadBombs(drawingSurface);

@@ -8,12 +8,14 @@ import android.view.MotionEvent;
 public class PauseButton extends Item {
 	
 	private Paint paint;
-	private boolean Paused = false;
-	private double timePaused;
-	private double pauseLength = 0;
+	private Game game;
 	
 	public PauseButton(DrawingSurface drawingSurface){
 		super(drawingSurface);
+		
+		game = drawingSurface.getGame();
+		
+		drawOrder = 100;
 		
 		paint = new Paint();
 		
@@ -28,7 +30,6 @@ public class PauseButton extends Item {
 	public void drawSelf(Canvas canvas){
 		String pauseMessage = "";
 		
-		
 		pauseMessage = "Pause";
 		
 		paint.setTextSize(20);
@@ -40,30 +41,6 @@ public class PauseButton extends Item {
 		
 		canvas.drawText(pauseMessage,startX,30,paint);
 		
-		/*if(Paused){
-			paint.setColor(0xaa000000);
-			canvas.drawPaint(paint);
-			
-			paint.setTextSize(30);
-			paint.setColor(0xff000099);
-			
-			String message = "Paused";
-			
-			textWidth = paint.measureText(message);
-			
-			startX = (surfaceWidth / 2) - (textWidth / 2);
-			float startY = surfaceHeight / 2;
-			
-			canvas.drawText(message,startX,startY,paint);
-		}*/
-	}
-	
-	public void update(double timeDifference,DrawingSurface drawingSurface){
-		if(Paused){
-			pauseLength = pauseLength + timeDifference;
-		}else{
-			pauseLength = 0;
-		}
 	}
 	
 	public void handleTouchEvent(SimpleMotionEvent event,DrawingSurface drawingSurface){
@@ -74,7 +51,7 @@ public class PauseButton extends Item {
 		if(event.isDown()){
 			if(!Paused){
 				if(x > surfaceWidth - (surfaceWidth / 5) && y < surfaceHeight / 10){
-					togglePause();
+					game.togglePause();
 					
 					Menu menu = new Menu(drawingSurface);
 					
@@ -85,29 +62,4 @@ public class PauseButton extends Item {
 	}
 }
 	
-	public void togglePause(){
-		if(Paused){
-			UnPauseGame();
-		}else{
-			PauseGame();
-		}
-	}
-	
-	public void PauseGame(){
-		Paused = true;
-		//timePaused = System.currentTimeMillis();
-	}
-	
-	public void UnPauseGame(){
-		Paused = false;
-		//pauseLength = System.currentTimeMillis() - timePaused;
-	}
-	
-	public boolean getPaused(){
-		return Paused;
-	}
-	
-	public double getPauseLength(){
-		return pauseLength;
-	}
 }

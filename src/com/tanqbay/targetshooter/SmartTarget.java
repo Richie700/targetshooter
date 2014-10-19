@@ -31,22 +31,18 @@ public class SmartTarget extends Target {
 	
 	public void update(double timeDifference,DrawingSurface drawingSurface){
 		super.update(timeDifference,drawingSurface);
+			
+		calculateDestinationRotation();
+		calculateDestination(drawingSurface);
+			
+		if(Math.abs(rotation - destinationRotation) > Epsilon){
+		   if(destinationRotation > rotation){
+		      rotation += 0.03;
+		   }else{
+			      rotation -= 0.03;
+		   }  
+		 }
 		
-		
-		if(!drawingSurface.getPaused()){
-			
-			calculateDestinationRotation();
-			
-			calculateDestination(drawingSurface);
-			
-			if(Math.abs(rotation - destinationRotation) > Epsilon){
-				if(destinationRotation > rotation){
-					rotation += 0.03;
-				}else{
-					rotation -= 0.03;
-				}
-			}
-		}
 	}
 	
 	protected void calculateDestinationRotation(){
@@ -77,9 +73,12 @@ public class SmartTarget extends Target {
 	}
 	
 	private void avoidGunBarrel(DrawingSurface drawingSurface){
-		if(drawingSurface.getGun() != null && Position[1] < drawingSurface.getGun().getPivot()[1]){
-			double[] barrelEnd = drawingSurface.getGun().getBarrelPosition();
-			double gunAngle = -drawingSurface.getGun().getAngle();
+		
+		Gun gun = drawingSurface.getGame().getGun();
+		
+		if(gun != null && Position[1] < gun.getPivot()[1]){
+			double[] barrelEnd = gun.getBarrelPosition();
+			double gunAngle = -gun.getAngle();
 			
 			double dtg = distance(Position[0],Position[1],barrelEnd[0],barrelEnd[1]);
 			
@@ -185,4 +184,3 @@ public class SmartTarget extends Target {
    		}
 		}
 }
-

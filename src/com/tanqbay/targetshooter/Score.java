@@ -15,6 +15,8 @@ public class Score extends Item {
 	public Score(DrawingSurface drawingSurface){
 		super(drawingSurface);
 		
+		drawOrder = 110;
+		
 		paint = new Paint();
 		
 		
@@ -67,11 +69,13 @@ public class Score extends Item {
 		
 	}
 	
-	public void update(double timeDifference,DrawingSurface drawingSurface){
-	
-		shieldStrength = drawingSurface.getCity().getShieldStrength();
-		hits = drawingSurface.getHits();
-		
+	public void setHits(int hits){
+	   this.hits = hits;
 	}
+	
+	public void setShieldStrength(double shieldStrength){
+	   this.shieldStrength = shieldStrength;
+	}
+	
 	
 }

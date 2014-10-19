@@ -68,13 +68,11 @@ public class City extends Item {
 	}
 	
 	public void update(double timeDifference,DrawingSurface drawingSurface){
-		if(!drawingSurface.getPauseButton().getPaused()){
 			shieldStrength += shieldRegeneration * timeDifference;
 			
 			if(shieldStrength > 100){
 				shieldStrength = 100;
 			}
-		}
 	}
 	
 	public double getShieldPosition(){

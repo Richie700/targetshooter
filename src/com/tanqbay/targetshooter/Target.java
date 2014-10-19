@@ -51,13 +51,6 @@ public class Target extends Item {
 	
 	
 	public void update(double timeDifference,DrawingSurface drawingSurface){
-		//Position[1] = Position[1] + (speed * (float) timeDifference);
-		
-		//radius = actualRadius * ((Position[1] - startY)/surfaceHeight);
-		
-		//Log.i("Speed",String.valueOf(speed));
-		
-		if(!drawingSurface.getPaused()){
 			
 			DetectCollisions(drawingSurface);
 			
@@ -75,12 +68,12 @@ public class Target extends Item {
 			
 			if(Position[0] <= 0 + radius){
 				Velocity[0] = 5;
-				Destination = new float[]{Position[0],drawingSurface.getHeight()};
+				Destination = new float[]{Position[0],surfaceHeight};
 			}
 			
-			if(Position[0] >= drawingSurface.getWidth() - radius){
+			if(Position[0] >= surfaceWidth - radius){
 				Velocity[0] = -5;
-				Destination = new float[]{Position[0],drawingSurface.getHeight()};
+				Destination = new float[]{Position[0],surfaceHeight};
 			}
 			
 			if(getSpeed() > maxSpeed){
@@ -96,7 +89,7 @@ public class Target extends Item {
 				setReachedBottom(drawingSurface);
 				setReadyToBeRemoved(true);
 			}
-		}
+		
 	}
 	
 	protected void DetectCollisions( DrawingSurface drawingSurface ){
@@ -115,14 +108,11 @@ public class Target extends Item {
 	}
 	
 	protected boolean collisionDetected(Item item){
-		//Log.i("Equals",String.valueOf(item != this));
-		boolean detected =  item != this
-		&& item.checkForCollision()
-		&& distance(item.getPosition()[0],item.getPosition()[1],getPosition()[0],getPosition()[1]) < getRadius() + item.getRadius();
 		
-		if(detected && getType() == TARGET_TYPE){
-			Log.i("detected",String.valueOf(detected));
-		}
+		boolean detected =  item != this
+		   && item.checkForCollision()
+		   && distance(item.getPosition()[0],item.getPosition()[1],getPosition()[0],getPosition()[1]) < getRadius() + item.getRadius();
+		
 		
 		return detected;
 	}

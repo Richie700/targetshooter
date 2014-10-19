@@ -15,10 +15,8 @@ public class GunShip extends Ship {
    public void update(double timeDifference,DrawingSurface drawingSurface){
       super.update(timeDifference,drawingSurface);
       
-      if(!drawingSurface.getPaused()){
-      		   laserBank.updateTime(timeDifference);
+      laserBank.updateTime(timeDifference);
       		   
-      		   laserBank.fire(drawingSurface,new double[]{(double) getPosition()[0],(double) getPosition()[1]},Math.PI);
-      }
+      	laserBank.fire(drawingSurface,new double[]{(double) getPosition()[0],(double) getPosition()[1]},Math.PI);
    }
 }
