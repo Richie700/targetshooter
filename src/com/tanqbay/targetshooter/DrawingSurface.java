@@ -122,7 +122,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 	
 	@Override
 	public void surfaceDestroyed(SurfaceHolder holder) {
-   ((MainActivity) getContext()).2finish();
+   ((MainActivity) getContext()).finish();
 	}
 
 	@Override
