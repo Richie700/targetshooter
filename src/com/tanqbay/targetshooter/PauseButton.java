@@ -51,7 +51,7 @@ public class PauseButton extends Item {
 		if(event.isDown()){
 			//if(!Paused){
 				if(x > surfaceWidth - (surfaceWidth / 5) && y < surfaceHeight / 10){
-					game.togglePause();
+					game.pause();
 					
 					Menu menu = new Menu(drawingSurface);
 					
