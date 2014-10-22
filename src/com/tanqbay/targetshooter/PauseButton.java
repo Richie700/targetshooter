@@ -8,12 +8,9 @@ import android.view.MotionEvent;
 public class PauseButton extends Item {
 	
 	private Paint paint;
-	private Game game;
 	
 	public PauseButton(DrawingSurface drawingSurface){
 		super(drawingSurface);
-		
-		game = drawingSurface.getGame();
 		
 		drawOrder = 100;
 		
@@ -51,6 +48,9 @@ public class PauseButton extends Item {
 		if(event.isDown()){
 			//if(!Paused){
 				if(x > surfaceWidth - (surfaceWidth / 5) && y < surfaceHeight / 10){
+					
+					Game game = drawingSurface.getGame();
+					
 					game.pause();
 					
 					Menu menu = new Menu(drawingSurface);
