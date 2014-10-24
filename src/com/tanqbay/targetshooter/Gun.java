@@ -12,7 +12,7 @@ import android.graphics.RectF;
 import android.util.FloatMath;
 import android.util.Log;
 
-public class Gun extends GamesItem {
+public class Gun extends GameItem {
 	
 	
 	private float[] Pivot;
