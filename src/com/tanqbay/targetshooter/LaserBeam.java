@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.FloatMath;
 
-public class LaserBeam extends Item {
+public class LaserBeam extends GameItem {
 	
 	private double[] start;
 	private double[] currentStart;

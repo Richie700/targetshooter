@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 
-public class LoseDisplay extends Item {
+public class LoseDisplay extends GameItem {
 
 	private Paint paint;
 	private Boolean newHighScoreReached;

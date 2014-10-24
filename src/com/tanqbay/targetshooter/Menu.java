@@ -5,7 +5,7 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.view.MotionEvent;
 
-public class Menu extends Item {
+public class Menu extends GameItem {
 	
 	private Paint paint;
 	private Game game;

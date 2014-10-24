@@ -5,7 +5,7 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.view.MotionEvent;
 
-public class PauseButton extends Item {
+public class PauseButton extends GameItem {
 	
 	private Paint paint;
 	

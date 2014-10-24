@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 
-public class City extends Item {
+public class City extends GameItem {
 	
 	private Paint paint;
 	private double shieldPosition;

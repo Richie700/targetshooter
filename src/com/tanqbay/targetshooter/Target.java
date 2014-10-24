@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.util.FloatMath;
 import android.util.Log;
 
-public class Target extends Item {
+public class Target extends GameItem {
 	
 	protected float maxSpeed = 160;
 	protected float maxAcceleration = 500;

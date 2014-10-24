@@ -18,6 +18,7 @@ public class Game {
    private boolean Finished = false;
    private boolean paused = false;
    
+   
    public Game(DrawingSurface drawingSurface) {
       
      hits = 0;

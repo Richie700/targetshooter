@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 
-public class WaveComplete extends Item{
+public class WaveComplete extends GameItem{
 	
 	private Paint paint;
 	private int waveNumber;

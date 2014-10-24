@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 
-public class Score extends Item {
+public class Score extends GameItem {
 	
 	//private double shieldStrength = 100;
 	private Paint paint;
