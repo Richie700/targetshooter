@@ -53,7 +53,7 @@ public class TargetShooterGame extends Game {
 	}
 	
 	public void update(DrawingSurface drawingSurface){
-    super(drawingSurface);
+    super.update(drawingSurface);
     
     wave.addTargetIfNeeded(drawingSurface,enemies);
    	
