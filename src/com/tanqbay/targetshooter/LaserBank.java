@@ -6,7 +6,7 @@ public class LaserBank {
    private double rateOfFire = 0.500;
    private double lastShot;
    private double timeSinceLastShot = 0;
-	  private isEnemy = false;
+	  private boolean isEnemy = false;
 	  
    public LaserBank(boolean isEnemy,float laserSpeed,double rateOfFire) {
       this.isEnemy = isEnemy;
