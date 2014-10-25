@@ -119,6 +119,10 @@ public class TargetShooterGame extends Game {
     return friends;
  }
  
+ public ArrayList<Item> getEnemies(){
+    return enemies;
+ }
+ 
  public void addEnemy(Item item){
     enemies.add(item);
  }

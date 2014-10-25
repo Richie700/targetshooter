@@ -52,7 +52,7 @@ public class Target extends GameItem {
 	
 	public void update(double timeDifference,DrawingSurface drawingSurface){
 			
-			TargetShooterGame game = drawingSurface.getGame();
+			TargetShooterGame game = (TargetShooterGame) drawingSurface.getGame();
 			
 			DetectCollisions(game);
 			
