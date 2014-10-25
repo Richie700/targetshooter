@@ -1,5 +1,9 @@
 package com.tanqbay.targetshooter;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
+
 public class TargetShooterGame extends Game {
    
    private Gun gun;

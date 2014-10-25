@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import android.graphics.Canvas;
-import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
 
 public class Game {
    
