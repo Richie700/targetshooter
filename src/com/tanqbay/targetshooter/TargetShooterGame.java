@@ -55,7 +55,7 @@ public class TargetShooterGame extends Game {
 	public void update(DrawingSurface drawingSurface){
     super(drawingSurface);
     
-    wave.addTargetIfNeeded(drawingSurface,items);
+    wave.addTargetIfNeeded(drawingSurface,enemies);
    	
    	if(wave.isComplete()){
    			WaveComplete waveComplete = new WaveComplete(drawingSurface,wave.getWaveNumber());

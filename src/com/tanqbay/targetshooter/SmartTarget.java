@@ -33,7 +33,7 @@ public class SmartTarget extends Target {
 		super.update(timeDifference,drawingSurface);
 			
 		calculateDestinationRotation();
-		calculateDestination(drawingSurface.getGame());
+		calculateDestination((TargetShooterGame) drawingSurface.getGame());
 			
 		if(Math.abs(rotation - destinationRotation) > Epsilon){
 		   if(destinationRotation > rotation){
@@ -138,7 +138,7 @@ public class SmartTarget extends Target {
 			
 			for(int i = 0;i < items.size();i++){
 				try{
-				 if(items.get(i).getType() == Item.LASERBEAM_TYPE){
+				 if(items.get(i).getType() == LASERBEAM_TYPE){
    					laser = (LaserBeam) items.get(i);
    					end = laser.getEnd();
    					laserAngle = laser.getAngle();
