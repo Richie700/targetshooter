@@ -52,8 +52,8 @@ public class TargetShooterGame extends Game {
 		
 	}
 	
-	public void update(DrawingSurface drawingSurface){
-    super.update(drawingSurface);
+	public void update(DrawingSurface drawingSurface, double timeDifference){
+    super.update(drawingSurface,timeDifference);
     
     wave.addTargetIfNeeded(drawingSurface,enemies);
    	
