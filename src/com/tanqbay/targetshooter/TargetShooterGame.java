@@ -1,5 +1,7 @@
 package com.tanqbay.targetshooter;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -63,7 +65,7 @@ public class TargetShooterGame extends Game {
    		}
    	
    			if(city.getShieldStrength() <= 0){
-   				gameOver(drawingSurface,items);
+   				gameOver(drawingSurface);
    			}
    			
    			score.setHits(hits);
@@ -79,7 +81,7 @@ public class TargetShooterGame extends Game {
     return items;
  }
  
- private void gameOver(DrawingSurface drawingSurface,ArrayList<Item> items){
+ private void gameOver(DrawingSurface drawingSurface){
 		//getPauseButton().PauseGame();
 		Finished = true;
 		boolean newHighScoreReached = false;

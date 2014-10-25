@@ -49,7 +49,7 @@ public class PauseButton extends GameItem {
 			//if(!Paused){
 				if(x > surfaceWidth - (surfaceWidth / 5) && y < surfaceHeight / 10){
 					
-					Game game = drawingSurface.getGame();
+					TargetShooterGame game = (TargetShooterGame) drawingSurface.getGame();
 					
 					game.pause();
 					

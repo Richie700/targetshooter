@@ -7,8 +7,8 @@ import android.graphics.Canvas;
 
 public class Game {
    
-   private boolean Finished = false;
-   private boolean paused = false;
+   protected boolean Finished = false;
+   protected boolean paused = false;
    protected float surfaceWidth;
    protected float surfaceHeight;
    
