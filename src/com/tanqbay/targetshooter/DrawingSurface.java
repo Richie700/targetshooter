@@ -155,7 +155,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 			
 			timer = gameTime;
 			
-			game.update(this);
+			game.update(this,timeDifference);
 			
 		}
 		

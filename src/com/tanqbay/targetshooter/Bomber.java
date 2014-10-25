@@ -75,12 +75,14 @@ public class Bomber extends Ship {
 	
 	protected void calculateDestination(DrawingSurface drawingSurface){
 		
+		TargetShooterGame game = (TargetShooterGame) drawingSurface.getGame();
+		
 		if(bombs.size() > 0){
-			super.calculateDestination(drawingSurface);
+			super.calculateDestination(game);
 			
 			if(Position[1] > surfaceHeight * (1.0/3.0)){
 				Velocity[1] = -10;
-				dropBomb(drawingSurface.getGame());
+				dropBomb(game);
 			}
 		}else{
 			Destination = new float[]{Position[0],(float) -distanceToBombReload};

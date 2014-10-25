@@ -28,7 +28,7 @@ public class Game {
    			}
    }
    
-   public void update(DrawingSurface drawingSurface){
+   public void update(DrawingSurface drawingSurface, double timeDifference){
       ArrayList<Item> items = getItems();
       
       for(int i = items.size() - 1;i >= 0;i--){
