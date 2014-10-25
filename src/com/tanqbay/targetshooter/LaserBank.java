@@ -21,7 +21,7 @@ public class LaserBank {
    public void fire(DrawingSurface drawingSurface,double[] start,double angle){
    		if(timeSinceLastShot >= rateOfFire){
    			LaserBeam laser = new LaserBeam(start,laserSpeed,angle,drawingSurface);
-   			Game game = drawingSurface.getGame();
+   			TargetShooterGame game = (TargetShooterGame) drawingSurface.getGame();
    			if(isEnemy){
    			   game.addEnemy(laser);
    			}else{
