@@ -52,7 +52,9 @@ public class Target extends GameItem {
 	
 	public void update(double timeDifference,DrawingSurface drawingSurface){
 			
-			DetectCollisions(drawingSurface);
+			TargetShooterGame game = drawingSurface.getGame();
+			
+			DetectCollisions(game);
 			
 			float distanceToDestination = (float) distance(Position[0],Position[1],Destination[0],Destination[1]);
 			
@@ -85,25 +87,37 @@ public class Target extends GameItem {
 			Position[1] = Position[1] + (Velocity[1] * (float) timeDifference);
 			
 			
-			if(Position[1] > drawingSurface.getGame().getCity().getShieldPosition()){
-				setReachedBottom(drawingSurface);
+			if(Position[1] > game.getCity().getShieldPosition()){
+				setReachedBottom(game);
 				setReadyToBeRemoved(true);
 			}
 		
 	}
 	
-	protected void DetectCollisions( DrawingSurface drawingSurface ){
-		for(int i = 0;i < drawingSurface.getItems().size();i++){
-			Item item = drawingSurface.getItems().get(i);
-			if(collisionDetected(item)){
-				if(item.getType() == LASERBEAM_TYPE){
-					setReadyToBeRemoved(true);
-					item.setReadyToBeRemoved(true);
-					drawingSurface.getGame().addHit();
-				}else{
-					avoidCollision(item);
-				}
-			}
+	protected void DetectCollisions(TargetShooterGame game){
+		
+		ArrayList<Item> enemies = game.getEnemies();
+		ArrayList<Item> friends = game.getFriends();
+		
+		for(int i = 0;i < enemies.size();i++){
+		   Item item = enemies.get(i);
+		   if(collisionDetected(item)){
+		      avoidCollision(item);
+		   }
+		}
+		
+		for(int i = 0;i < friends.size();i++){
+		   Item item = friends.get(i);
+		   
+		   if(collisionDetected(item)){
+		      if(item.getType() == LASERBEAM_TYPE){
+		         setReadyToBeRemoved(true);
+		         item.setReadyToBeRemoved(true);
+		         game.addHit();
+		      }else{
+		         avoidCollision(item);
+		      }
+		   }
 		}
 	}
 	
@@ -151,9 +165,9 @@ public class Target extends GameItem {
 		return hit;
 	}
 	
-	public void setReachedBottom(DrawingSurface drawingSurface){
+	public void setReachedBottom(TargetShooterGame game){
 		reachedBottom = true;
-		drawingSurface.getGame().getCity().reduceShield(10);
+	 game.getCity().reduceShield(10);
 	}
 	
 	public int getType(){

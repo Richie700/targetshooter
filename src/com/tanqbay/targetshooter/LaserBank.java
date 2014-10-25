@@ -6,10 +6,10 @@ public class LaserBank {
    private double rateOfFire = 0.500;
    private double lastShot;
    private double timeSinceLastShot = 0;
-	  private int laserType;
+	  private isEnemy = false;
 	  
-   public LaserBank(int laserType,float laserSpeed,double rateOfFire) {
-      this.laserType = laserType;
+   public LaserBank(boolean isEnemy,float laserSpeed,double rateOfFire) {
+      this.isEnemy = isEnemy;
       this.laserSpeed = laserSpeed;
       this.rateOfFire = rateOfFire;
    }
@@ -21,8 +21,13 @@ public class LaserBank {
    public void fire(DrawingSurface drawingSurface,double[] start,double angle){
    		if(timeSinceLastShot >= rateOfFire){
    			LaserBeam laser = new LaserBeam(start,laserSpeed,angle,drawingSurface);
-   			laser.setType(laserType);
-   			drawingSurface.getItems().add(laser);
+   			TargetShooterGame game = drawingSurface.getGame();
+   			if(isEnemy){
+   			   game.addEnemy(laser);
+   			}else{
+   			   game.addFriend(laser);
+   			}
+   			
    			lastShot = System.currentTimeMillis();
    			timeSinceLastShot = 0;
    		}

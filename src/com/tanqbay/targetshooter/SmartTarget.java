@@ -33,7 +33,7 @@ public class SmartTarget extends Target {
 		super.update(timeDifference,drawingSurface);
 			
 		calculateDestinationRotation();
-		calculateDestination(drawingSurface);
+		calculateDestination(drawingSurface.getGame());
 			
 		if(Math.abs(rotation - destinationRotation) > Epsilon){
 		   if(destinationRotation > rotation){
@@ -62,19 +62,19 @@ public class SmartTarget extends Target {
 		}
 	}
 	
-	protected void calculateDestination(DrawingSurface drawingSurface){
+	protected void calculateDestination(TargetShooterGame game){
 		
 		Destination = new float[]{Position[0],surfaceHeight + radius};
 		
-		avoidGunBarrel(drawingSurface);
+		avoidGunBarrel(game);
 		
-		avoidLasers(drawingSurface);
+		avoidLasers(game);
 		
 	}
 	
-	private void avoidGunBarrel(DrawingSurface drawingSurface){
+	private void avoidGunBarrel(TargetShooterGame game){
 		
-		Gun gun = drawingSurface.getGame().getGun();
+		Gun gun = game.getGun();
 		
 		if(gun != null && Position[1] < gun.getPivot()[1]){
 			double[] barrelEnd = gun.getBarrelPosition();
@@ -125,8 +125,8 @@ public class SmartTarget extends Target {
 	
 	
 	
-	private void avoidLasers(DrawingSurface drawingSurface){
-		ArrayList<Item> items = drawingSurface.getItems();
+	private void avoidLasers(TargetShooterGame game){
+		ArrayList<Item> items = game.getFriends();
 		
 		double shortestDistance = surfaceHeight;
 		

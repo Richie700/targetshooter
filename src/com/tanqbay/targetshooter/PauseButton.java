@@ -55,7 +55,7 @@ public class PauseButton extends GameItem {
 					
 					Menu menu = new Menu(drawingSurface);
 					
-					drawingSurface.getItems().add(menu);
+					game.addUIItem(menu);
 					
 				}
 		//}

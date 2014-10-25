@@ -98,11 +98,7 @@ public class LaserBeam extends GameItem {
 		return angle;
 	}
 	
-	public void setType(int newType){
-	   type = newType;
-	}
-	
 	public int getType(){
-		return type;
+		return LASERBEAM_TYPE;
 	}
 }

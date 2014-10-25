@@ -8,11 +8,11 @@ import android.view.MotionEvent;
 
 public class Item implements Comparable<Item>,Parcelable {
 		
-	protected boolean readyToBeRemoved = false;
-	protected int drawOrder = 0;
- protected float surfaceWidth;
-	protected float surfaceHeight;
-	
+   protected boolean readyToBeRemoved = false;
+   protected int drawOrder = 0;
+   protected float surfaceWidth;
+   protected float surfaceHeight;
+         	
 	public Item(DrawingSurface drawingSurface){
 		surfaceWidth = (float) drawingSurface.getWidth();
 		surfaceHeight = (float) drawingSurface.getHeight();

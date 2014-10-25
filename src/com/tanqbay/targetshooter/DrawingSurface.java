@@ -1,8 +1,7 @@
 package com.tanqbay.targetshooter;
 
 import android.content.Context;
-import java.util.ArrayList;
-import java.util.Collections;
+
 
 
 import android.graphics.Bitmap;
@@ -44,13 +43,10 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 	public SurfaceHolder drawingSurfaceHolder;
 	private AnimationThread thread; 
 	private double timer;
-	private ArrayList<Item> items = new ArrayList<Item>();
 	private Game game;
 	private Bitmap background;
 	//private AdView NextAd;
 	//private boolean ShowPopup = true;
-	
-	
 	
 	
 	public DrawingSurface(Context context) {
@@ -99,9 +95,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 				this.thread.setRunning(false);
 			}
 				
-				items = new ArrayList<Item>();
-				
-				game = new Game(this);
+				game = new TargetShooterGame(this);
 		
 			startAnimationThread();
 			
@@ -145,10 +139,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 			
 			//canvas.drawBitmap(background,sourceRect,rect,new Paint());
 			
-			// Draw Items
-			for(int i = 0;i < items.size();i++){
-				items.get(i).drawSelf(canvas);
-			}
+			game.draw(canvas);
 		}
 	}
 	
@@ -162,31 +153,13 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 			   timeDifference = (gameTime - timer) / 1000;
 			}
 			
-			for(int i = items.size() - 1;i >= 0;i--){
-				try{
-					items.get(i).update(timeDifference,this);
-					
-					if(items.get(i).isReadyToBeRemoved()){
-						items.remove(i);
-					}
-					
-				}catch(IndexOutOfBoundsException e){
-					
-				}catch(NullPointerException e){
-					
-				}
-			}
-		
 			timer = gameTime;
 			
 			game.update(this);
 			
-			Collections.sort(items);
-			
 		}
 		
 	}
-	
 		
 	public boolean onTouchEvent(MotionEvent event){
 		
@@ -197,16 +170,11 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 				setupGame();
 			}
 		}else{
-			for(int i = 0;i < items.size();i++){
-				items.get(i).handleTouchEvent(simpleEvent,this);
-			}
+			
+			game.touchEvent(simpleEvent,this);
 			
 		}
 		return true;
-	}
-	
-	public ArrayList<Item> getItems(){
-		return items;
 	}
 	
 	public Game getGame(){

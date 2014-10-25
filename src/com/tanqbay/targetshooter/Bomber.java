@@ -80,7 +80,7 @@ public class Bomber extends Ship {
 			
 			if(Position[1] > surfaceHeight * (1.0/3.0)){
 				Velocity[1] = -10;
-				dropBomb(drawingSurface);
+				dropBomb(drawingSurface.getGame());
 			}
 		}else{
 			Destination = new float[]{Position[0],(float) -distanceToBombReload};
@@ -89,20 +89,20 @@ public class Bomber extends Ship {
 		
 	}
 	
-	public void setHit(DrawingSurface drawingSurface){
+	public void setHit(TargetShooterGame game){
 		super.setHit();
-		dropBomb(drawingSurface);
+		dropBomb(game);
 	}
 	
-	private void dropBomb(DrawingSurface drawingSurface){
+	private void dropBomb(TargetShooterGame game){
 		if(timeSinceLastDrop >= bombDropRate && bombs.size() > 0){
 			
 			Bomb bomb = bombs.get(bombs.size() - 1);
 			
 			bomb.setPosition(new float[]{bomb.getPosition()[0],Position[1] + radius});
-			bomb.setDestination(new float[]{bomb.getPosition()[0],drawingSurface.getHeight() + bomb.getRadius()});
+			bomb.setDestination(new float[]{bomb.getPosition()[0],surfaceHeight + bomb.getRadius()});
 			
-			drawingSurface.getItems().add(bomb);
+			game.addEnemy(bomb);
 			
 			timeSinceLastDrop = 0;
 			
