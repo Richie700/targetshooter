@@ -110,18 +110,18 @@ public class Target extends GameItem {
 		   Item item = friends.get(i);
 		   
 		   if(collisionDetected(item)){
-		      if(item.getType() == LASERBEAM_TYPE){
-		         setReadyToBeRemoved(true);
-		         item.setReadyToBeRemoved(true);
-		         game.addHit();
-		      }else{
+		      //if(item.getType() == WEAPONFIRE_TYPE){
+		      //   setReadyToBeRemoved(true);
+		      //   item.setReadyToBeRemoved(true);
+		      //   game.addHit();
+		      //}else{
 		         avoidCollision(item);
-		      }
+		      //}
 		   }
 		}
 	}
 	
-	protected boolean collisionDetected(Item item){
+	public boolean collisionDetected(Item item){
 		
 		boolean detected =  item != this
 		   && item.checkForCollision()

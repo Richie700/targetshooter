@@ -114,13 +114,11 @@ public class SmartTarget extends Target {
 	}
 	
 	protected void avoidCollision(Item item){
-		//if(item.getType() != LASERBEAM_TYPE){
 			if(item.getPosition()[0] < getPosition()[0]){
 				Destination = new float[]{surfaceWidth,getPosition()[1]};
 			}else{
 				Destination = new float[]{0,getPosition()[1]};
 			}
-		//}
 	}
 	
 	
@@ -138,7 +136,7 @@ public class SmartTarget extends Target {
 			
 			for(int i = 0;i < items.size();i++){
 				try{
-				 if(items.get(i).getType() == LASERBEAM_TYPE){
+				 if(items.get(i).getType() == WEAPONFIRE_TYPE){
    					laser = (LaserBeam) items.get(i);
    					end = laser.getEnd();
    					laserAngle = laser.getAngle();

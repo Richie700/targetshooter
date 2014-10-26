@@ -97,6 +97,6 @@ public class LaserBeam extends GameItem {
 	}
 	
 	public int getType(){
-		return LASERBEAM_TYPE;
+		return WEAPONFIRE_TYPE;
 	}
 }

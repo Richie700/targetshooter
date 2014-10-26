@@ -59,6 +59,9 @@ public class TargetShooterGame extends Game {
     removeItems(friends);
     removeItems(uiitems);
     
+    checkForHits(enemies,friends);
+    checkForHits(friends,enemies);
+    
     wave.addTargetIfNeeded(drawingSurface,enemies);
    	
    	if(wave.isComplete()){
@@ -78,9 +81,25 @@ public class TargetShooterGame extends Game {
  }
  
  private void removeItems(ArrayList<Item> items){
-    for(int i = 0;i < items.size();i++){
+    for(int i = items.size() - 1;i >= 0;i--){
        if(items.get(i).isReadyToBeRemoved()){
           items.remove(i);
+       }
+    }
+ }
+ 
+ private void checkForHits(targets,weapons){
+    for(int i = targets.size() - 1;i >= 0;i--){
+       Item target = targets.get(i);
+       for(int j = weapons.size() - 1;j >= 0;j--){
+          if(weapons.get(j).getType() == GameItem.WEAPONFIRE_TYPE){
+             Item weapon = weapons.get(i);
+             if(target.collisionDetected(weapon)){
+                target.setReadyToBeRemoved(true);
+                weapon.setReadyToBeRemoved(true);
+                addHit();
+             }
+          }
        }
     }
  }
