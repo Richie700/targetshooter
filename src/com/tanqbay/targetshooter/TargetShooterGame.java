@@ -109,7 +109,7 @@ public class TargetShooterGame extends Game {
 		boolean detected =  item1 != item2
 		   && item1.checkForCollision()
 		   && item2.checkForCollision()
-		   && distance(item1.getPosition()[0],item1.getPosition()[1],item2.getPosition()[0],item2.getPosition()[1]) < item1.getRadius() + item2.getRadius();
+		   && Item.distance(item1.getPosition()[0],item1.getPosition()[1],item2.getPosition()[0],item2.getPosition()[1]) < item1.getRadius() + item2.getRadius();
 		
 		
 		return detected;

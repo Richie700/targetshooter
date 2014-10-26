@@ -121,7 +121,15 @@ public class Target extends GameItem {
 		}
 	}
 	
-	
+	protected boolean collisionDetected(Item item){
+		
+		boolean detected =  item != this
+		   && item.checkForCollision()
+		   && distance(item.getPosition()[0],item.getPosition()[1],getPosition()[0],getPosition()[1]) < getRadius() + item.getRadius();
+		
+		
+		return detected;
+	}
 	
 	protected void avoidCollision(Item item){
 		
