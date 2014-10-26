@@ -94,7 +94,7 @@ public class TargetShooterGame extends Game {
        for(int j = weapons.size() - 1;j >= 0;j--){
           if(weapons.get(j).getType() == GameItem.WEAPONFIRE_TYPE){
              Item weapon = weapons.get(i);
-             if(target.collisionDetected(weapon)){
+             if(collisionDetected(target,weapon)){
                 target.setReadyToBeRemoved(true);
                 weapon.setReadyToBeRemoved(true);
                 addHit();
@@ -103,6 +103,17 @@ public class TargetShooterGame extends Game {
        }
     }
  }
+ 
+ public boolean collisionDetected(Item item1, Item item2){
+		
+		boolean detected =  item1 != item2
+		   && item1.checkForCollision()
+		   && item2.checkForCollision()
+		   && distance(item1.getPosition()[0],item1.getPosition()[1],item2.getPosition()[0],item2.getPosition()[1]) < item1.getRadius() + item2.getRadius();
+		
+		
+		return detected;
+	}
  
  protected ArrayList<Item> getItems(){
     ArrayList<Item> items = new ArrayList<Item>(enemies);
