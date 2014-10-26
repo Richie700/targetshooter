@@ -25,6 +25,8 @@ public class MainActivity extends Activity {
          DebugNotifier.notify(e,(Context) this);	
       }catch(Error e2){
          DebugNotifier.notify(e2,(Context) this);
+         
+         throw e2;
       }
       
    }

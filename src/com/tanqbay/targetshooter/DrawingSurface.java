@@ -85,12 +85,20 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 		createdOrChanged();
 	}
 	
-	private void createdOrChanged(){
-		setupGame();
-	}
+   private void createdOrChanged(){
+      try{
+         setupGame();
+      }catch(Exception e){
+         DebugNotifier.notify(e,getContext());	
+      }catch(Error e2){
+         DebugNotifier.notify(e2,getContext());	
+         
+         throw e2;
+      }
+   }
 	
 	private void setupGame(){
-		try{
+		
 			if(this.thread != null){
 				this.thread.setRunning(false);
 			}
@@ -99,9 +107,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 		
 			startAnimationThread();
 			
-		}catch(Exception e){
-			DebugNotifier.notify(e,getContext());		
-		}
+		
 	}
 	
 	
