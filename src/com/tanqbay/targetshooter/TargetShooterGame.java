@@ -88,7 +88,7 @@ public class TargetShooterGame extends Game {
     }
  }
  
- private void checkForHits(targets,weapons){
+ private void checkForHits(ArrayList<Item> targets,ArrayList<Item> weapons){
     for(int i = targets.size() - 1;i >= 0;i--){
        Item target = targets.get(i);
        for(int j = weapons.size() - 1;j >= 0;j--){
