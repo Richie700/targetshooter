@@ -9,7 +9,7 @@ public class GunShip extends Ship {
       
       radius = 35;
       
-      laserBank = new LaserBank(ENEMYLASERBEAM_TYPE,200,1.500);
+      laserBank = new LaserBank(true,200,1.500);
    }
    
    public void update(double timeDifference,DrawingSurface drawingSurface){

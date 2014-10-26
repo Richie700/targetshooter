@@ -35,7 +35,7 @@ public class Gun extends GameItem {
 		pivotRadius = drawingSurface.getWidth() / 20.0;
 		angle = (float) 0.1;
 		
-		laserBank = new LaserBank(LASERBEAM_TYPE,200,0.500);
+		laserBank = new LaserBank(false,200,0.500);
 		
 		paint = new Paint();
 		paint.setStrokeWidth(7);
