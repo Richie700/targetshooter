@@ -11,20 +11,23 @@ import android.support.v4.app.NavUtils;
 
 public class MainActivity extends Activity {
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-	try{        
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		
-		/*if(savedInstanceState != null){
-				restoreFromBundle(savedInstanceState);
-		}*/
-	}catch(Exception e){
-	
-		DebugNotifier.notify(e,(Context) this);	
-	}
-    }
+   @Override
+   public void onCreate(Bundle savedInstanceState) {
+      try{
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_main);
+         
+         /*if(savedInstanceState != null){
+            restoreFromBundle(savedInstanceState);
+         }*/
+         
+      }catch(Exception e){
+         DebugNotifier.notify(e,(Context) this);	
+      }catch(Error e2){
+         DebugNotifier.notify(e2,(Context) this);
+      }
+      
+   }
 					
 					@Override
 					public void onSaveInstanceState(Bundle savedInstanceState) {
