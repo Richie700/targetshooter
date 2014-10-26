@@ -55,6 +55,10 @@ public class TargetShooterGame extends Game {
 	public void update(DrawingSurface drawingSurface, double timeDifference){
     super.update(drawingSurface,timeDifference);
     
+    removeItems(enemies);
+    removeItems(friends);
+    removeItems(uiitems);
+    
     wave.addTargetIfNeeded(drawingSurface,enemies);
    	
    	if(wave.isComplete()){
@@ -71,6 +75,14 @@ public class TargetShooterGame extends Game {
    			score.setHits(hits);
    			score.setShieldStrength(city.getShieldStrength());
    			
+ }
+ 
+ private void removeItems(ArrayList<Item> items){
+    for(int i = 0;i < items.size();i++){
+       if(items.get(i).isReadyToBeRemoved()){
+          items.remove(i);
+       }
+    }
  }
  
  protected ArrayList<Item> getItems(){
