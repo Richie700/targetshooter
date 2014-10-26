@@ -19,7 +19,6 @@ public class LaserBeam extends GameItem {
 	private double range;
 	private boolean hit = false;
 	private Paint paint;
-	private int type = LASERBEAM_TYPE;
 	
 	public LaserBeam(double[] start, double speed, double angle, DrawingSurface drawingSurface){
 		super(drawingSurface);
