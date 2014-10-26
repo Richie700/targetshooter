@@ -14,7 +14,6 @@ public class LaserBeam extends GameItem {
 	private double length = 40;
 	private float actualWidth = 10;
 	private double width = 10;
-	//private float surfaceHeight;
 	private double speed;
 	private double range;
 	private boolean hit = false;

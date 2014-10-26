@@ -43,7 +43,7 @@ public class DrawingSurface extends SurfaceView implements SurfaceHolder.Callbac
 	public SurfaceHolder drawingSurfaceHolder;
 	private AnimationThread thread; 
 	private double timer;
-	private Game game;
+	private TargetShooterGame game;
 	private Bitmap background;
 	//private AdView NextAd;
 	//private boolean ShowPopup = true;
