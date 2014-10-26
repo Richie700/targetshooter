@@ -23,9 +23,9 @@ public class LaserBank {
    			LaserBeam laser = new LaserBeam(start,laserSpeed,angle,drawingSurface);
    			TargetShooterGame game = (TargetShooterGame) drawingSurface.getGame();
    			if(isEnemy){
-   			   game.addFriend(laser);
-   			}else{
    			   game.addEnemy(laser);
+   			}else{
+   			   game.addFriend(laser);
    			}
    			
    			lastShot = System.currentTimeMillis();
