@@ -73,9 +73,7 @@ public class Bomber extends Ship {
 		destinationRotation = (float) 0;
 	}
 	
-	protected void calculateDestination(DrawingSurface drawingSurface){
-		
-		TargetShooterGame game = (TargetShooterGame) drawingSurface.getGame();
+	protected void calculateDestination(TargetShooterGame game){
 		
 		if(bombs.size() > 0){
 			super.calculateDestination(game);
