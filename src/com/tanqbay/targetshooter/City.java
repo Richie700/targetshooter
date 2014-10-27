@@ -81,7 +81,7 @@ public class City extends GameItem {
 	}
 	
 	public float[] getPosition(){
-		return new float[]{(float) surfaceWidth / 2,(float) planetPosition};
+		return new float[]{(float) surfaceWidth / 2,(float) (planetPosition + planetRadius)};
 	}
 	
 	public double getShieldPosition(){
