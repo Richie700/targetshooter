@@ -90,7 +90,7 @@ public class Target extends GameItem {
 			
 			if(Position[1] > game.getCity().getShieldPosition()){
 				setReachedBottom(game);
-				setReadyToBeRemoved(true);
+				//setReadyToBeRemoved(true);
 			}
 		
 	}
