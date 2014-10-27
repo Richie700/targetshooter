@@ -32,8 +32,6 @@ public class GameItem extends Item {
       reduceLife(item.getCollisionDamageDealt());
       item.reduceLife(getCollisionDamageDealt());
       reduceLife(collisionDamage);
-      collisionDamage = 0;
-      collisionDamageDealt = 0;
    }
    
    public void reduceLife(double amount){

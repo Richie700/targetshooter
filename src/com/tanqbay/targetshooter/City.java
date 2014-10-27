@@ -22,6 +22,7 @@ public class City extends GameItem {
 		super(drawingSurface);
 		
 		life = 100;
+		maxLife = 100;
 		regeneration = 0.5;
 		
 		paint = new Paint();
