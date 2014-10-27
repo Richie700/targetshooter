@@ -160,7 +160,7 @@ public class Gun extends GameItem {
 	}
 	
 	public float getRadius(){
-		return (float) length;
+		return (float) handleLength * 2;
 	}
 	
 	public boolean checkForCollision(){
