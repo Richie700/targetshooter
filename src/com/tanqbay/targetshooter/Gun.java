@@ -29,6 +29,9 @@ public class Gun extends GameItem {
 	public Gun(DrawingSurface drawingSurface){
 		super(drawingSurface);
 		
+		life = 500;
+		regeneration = 5;
+		
 		Pivot = new float[]{drawingSurface.getWidth() / 2, (float) (drawingSurface.getHeight() * (3.0/4.0))};
 		length = drawingSurface.getHeight() / 5.0;
 		handleLength = (2.0 * length) / 5.0;

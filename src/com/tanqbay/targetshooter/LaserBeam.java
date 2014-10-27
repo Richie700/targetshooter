@@ -22,6 +22,9 @@ public class LaserBeam extends GameItem {
 	public LaserBeam(double[] start, double speed, double angle, DrawingSurface drawingSurface){
 		super(drawingSurface);
 		
+		collisionDamageDealt = 5;
+		collisionDamage = 2;
+		
 		this.start = start;
 		this.currentStart = start;
 		this.currentEnd = start;

@@ -12,15 +12,18 @@ public class City extends GameItem {
 	private Paint paint;
 	private double shieldPosition;
 	private double planetPosition;
-	private double shieldStrength = 100;
-	private double shieldRegeneration = 0.5;
+	//private double shieldStrength = 100;
+	//private double shieldRegeneration = 0.5;
 	private Bitmap planetImage;
 	private double planetRadius;
 	
 	
 	public City(DrawingSurface drawingSurface) {
 		super(drawingSurface);
-				
+		
+		life = 100;
+		regeneration = 0.5;
+		
 		paint = new Paint();
 		//paint.setStrokeWidth(7);
 		//paint.setStrokeCap(Paint.Cap.ROUND);
@@ -59,7 +62,7 @@ public class City extends GameItem {
 		
 		paint.setColor(0xaaddddff);
 		
-		int shieldAlpha = (int) (0xaa * (shieldStrength / 100));
+		int shieldAlpha = (int) (0xaa * (life / 100));
 		
 		paint.setAlpha(shieldAlpha);
 		
@@ -68,22 +71,15 @@ public class City extends GameItem {
 	}
 	
 	public void update(double timeDifference,DrawingSurface drawingSurface){
-			shieldStrength += shieldRegeneration * timeDifference;
+			super.update(timeDifference,drawingSurface);
 			
-			if(shieldStrength > 100){
-				shieldStrength = 100;
-			}
 	}
 	
 	public double getShieldPosition(){
 		return shieldPosition;
 	}
 	
-	public void reduceShield(double Amount){
-		shieldStrength -= Amount;
-	}
-	
 	public double getShieldStrength(){
-		return shieldStrength;
+		return life;
 	}
 }

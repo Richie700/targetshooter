@@ -51,6 +51,7 @@ public class Target extends GameItem {
 	
 	
 	public void update(double timeDifference,DrawingSurface drawingSurface){
+			super.update(timeDifference,drawingSurface);
 			
 			TargetShooterGame game = (TargetShooterGame) drawingSurface.getGame();
 			

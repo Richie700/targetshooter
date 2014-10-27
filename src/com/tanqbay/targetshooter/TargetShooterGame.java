@@ -92,13 +92,11 @@ public class TargetShooterGame extends Game {
     for(int i = targets.size() - 1;i >= 0;i--){
        Item target = targets.get(i);
        for(int j = weapons.size() - 1;j >= 0;j--){
-          if(weapons.get(j).getType() == GameItem.WEAPONFIRE_TYPE){
-             Item weapon = weapons.get(j);
-             if(collisionDetected(target,weapon)){
-                target.setReadyToBeRemoved(true);
-                weapon.setReadyToBeRemoved(true);
-                addHit();
-             }
+          Item weapon = weapons.get(j);
+          if(collisionDetected(target,weapon)){
+             target.collideWith(weapon);
+             weapon.collideWith(target);
+             addHit();
           }
        }
     }
