@@ -8,12 +8,6 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 
-/*
- * Ship Ideas:
- * Bomber - stops and moves back and forth avoiding lasers and dropping bombs
- * Kamikaze flies into shield
- * 
- */
 
 public class Ship extends SmartTarget {
 	
