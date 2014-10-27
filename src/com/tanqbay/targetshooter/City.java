@@ -91,4 +91,8 @@ public class City extends GameItem {
 	public double getShieldStrength(){
 		return life;
 	}
+	
+	public boolean checkForCollision(){
+		return true;
+	}
 }
