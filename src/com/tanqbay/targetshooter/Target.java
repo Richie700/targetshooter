@@ -168,7 +168,6 @@ public class Target extends GameItem {
 	
 	public void setReachedBottom(TargetShooterGame game){
 		reachedBottom = true;
-	 game.getCity().reduceShield(10);
 	}
 	
 	public int getType(){

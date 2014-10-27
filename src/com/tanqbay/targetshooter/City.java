@@ -75,6 +75,10 @@ public class City extends GameItem {
 			
 	}
 	
+	public float getRadius(){
+		return planetRadius;
+	}
+	
 	public double getShieldPosition(){
 		return shieldPosition;
 	}

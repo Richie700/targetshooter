@@ -90,9 +90,9 @@ public class TargetShooterGame extends Game {
  
  private void checkForHits(ArrayList<Item> targets,ArrayList<Item> weapons){
     for(int i = targets.size() - 1;i >= 0;i--){
-       Item target = targets.get(i);
+       GameItem target = targets.get(i);
        for(int j = weapons.size() - 1;j >= 0;j--){
-          Item weapon = weapons.get(j);
+          GameItem weapon = weapons.get(j);
           if(collisionDetected(target,weapon)){
              target.collideWith(weapon);
              weapon.collideWith(target);
