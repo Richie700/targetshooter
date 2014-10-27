@@ -16,6 +16,9 @@ public class Bomb extends Target {
 	public Bomb(DrawingSurface drawingSurface) {
 		super(drawingSurface);
 		
+		collisionDamage = 10;
+		collisionDamageDealt = 10;
+		
 		radius = 20;
 		
 		paint = new Paint();
