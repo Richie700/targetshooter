@@ -92,7 +92,11 @@ public class Target extends GameItem {
 				setReachedBottom(game);
 				//setReadyToBeRemoved(true);
 			}
-		
+			
+			if(isReadyToBeRemoved()){
+			   game.addHit();
+			}
+			
 	}
 	
 	protected void DetectCollisions(TargetShooterGame game){

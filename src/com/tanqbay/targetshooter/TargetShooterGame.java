@@ -96,7 +96,6 @@ public class TargetShooterGame extends Game {
           if(collisionDetected(target,weapon)){
              target.collideWith(weapon);
              weapon.collideWith(target);
-             addHit();
           }
        }
     }
