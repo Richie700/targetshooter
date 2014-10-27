@@ -23,7 +23,7 @@ public class City extends GameItem {
 		
 		life = 100;
 		maxLife = 100;
-		regeneration = 0.5;
+		regeneration = 5;
 		collisionDamageDealt = 1000;
 		
 		paint = new Paint();
