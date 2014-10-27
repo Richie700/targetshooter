@@ -23,6 +23,8 @@ public class Ship extends SmartTarget {
 	public Ship(DrawingSurface drawingSurface) {
 		super(drawingSurface);
 		
+		collisionDamage = 10;
+ collisionDamageDealt = 10;
 		
 		Velocity = new float[]{0,0};
 		Acceleration = new float[]{0,0};

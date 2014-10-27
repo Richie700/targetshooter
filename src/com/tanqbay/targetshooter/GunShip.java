@@ -7,6 +7,9 @@ public class GunShip extends Ship {
    public GunShip(DrawingSurface drawingSurface) {
       super(drawingSurface);
       
+      collisionDamage = 10;
+      collisionDamageDealt = 10;
+      
       radius = 35;
       
       laserBank = new LaserBank(true,200,5.0);
