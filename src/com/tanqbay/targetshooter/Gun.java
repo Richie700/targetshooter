@@ -164,7 +164,7 @@ public class Gun extends GameItem {
 	}
 	
 	public boolean checkForCollision(){
-		return true;
+		return false;
 	}
 
 }
