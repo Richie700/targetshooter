@@ -40,6 +40,7 @@ public class LaserBeam extends GameItem {
 	}
 	
 	public void update(double timeDifference,DrawingSurface drawingSurface){
+		super.update(timeDifference,drawingSurface);
 		if(reachedLimit()){
 		   setReadyToBeRemoved(true);
 		}
