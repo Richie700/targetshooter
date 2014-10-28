@@ -16,6 +16,7 @@ public class City extends GameItem {
 	//private double shieldRegeneration = 0.5;
 	private Bitmap planetImage;
 	private double planetRadius;
+	private double shieldRadius;
 	
 	
 	public City(DrawingSurface drawingSurface) {
@@ -23,7 +24,7 @@ public class City extends GameItem {
 		
 		life = 100;
 		maxLife = 100;
-		regeneration = 5;
+		regeneration = 0.5;
 		collisionDamageDealt = 1000;
 		
 		paint = new Paint();
@@ -35,6 +36,7 @@ public class City extends GameItem {
 		shieldPosition = surfaceHeight * (7.0/8.0);
 		
 		planetRadius = surfaceWidth * 2.0;
+		shieldRadius = planetRadius + (surfaceHeight / 8.0);
 		
 		planetPosition = shieldPosition + surfaceHeight * (1.0/12.0);
 		
@@ -78,7 +80,7 @@ public class City extends GameItem {
 	}
 	
 	public float getRadius(){
-		return (float) planetRadius;
+		return (float) shieldRadius;
 	}
 	
 	public float[] getPosition(){

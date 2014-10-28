@@ -16,7 +16,6 @@ public class LaserBeam extends GameItem {
 	private double width = 10;
 	private double speed;
 	private double range;
-	private boolean hit = false;
 	private Paint paint;
 	
 	public LaserBeam(double[] start, double speed, double angle, DrawingSurface drawingSurface){
@@ -60,7 +59,7 @@ public class LaserBeam extends GameItem {
 	}
 	
 	public void drawSelf(Canvas canvas){
-		if(!hitTarget() && !reachedLimit()){
+		if(!reachedLimit()){
 			
 			paint.setStrokeWidth((float) width);
 			
@@ -74,18 +73,6 @@ public class LaserBeam extends GameItem {
 	
 	public boolean reachedLimit(){
 		return distance(start[0],start[1],currentEnd[0],currentEnd[1]) > range;
-	}
-	
-	public boolean hitTarget(){
-		return hit;
-	}
-	
-	public void setHit(){
-		hit = true;
-	}
-	
-	public boolean getHit(){
-		return hit;
 	}
 	
 	public double[] getEnd(){

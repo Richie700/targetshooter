@@ -74,7 +74,7 @@ public class Score extends GameItem {
 	}
 	
 	public void setShieldStrength(double shieldStrength){
-	   this.shieldStrength = shieldStrength;
+	   this.shieldStrength = Math.max(0,shieldStrength);
 	}
 	
 	
