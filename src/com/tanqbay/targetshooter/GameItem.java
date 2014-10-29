@@ -30,7 +30,7 @@ public class GameItem extends Item {
    
    public void collideWith(GameItem item){
       reduceLife(item.getCollisionDamageDealt());
-      item.reduceLife(getCollisionDamageDealt());
+      //item.reduceLife(getCollisionDamageDealt());
       reduceLife(collisionDamage);
    }
    
