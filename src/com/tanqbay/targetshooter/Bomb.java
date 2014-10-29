@@ -39,7 +39,7 @@ public class Bomb extends Target {
 	}
 	
 	public void drawSelf(Canvas canvas){
-		if(!hit){
+		
 			
 			RectF rect = new RectF(-radius,-radius,radius,radius);
 			
@@ -54,7 +54,7 @@ public class Bomb extends Target {
 			canvas.restore();
 			
 			//canvas.drawCircle(Position[0],Position[1],radius,paint);
-		}
+		
 	}
 	
 	public void setPosition(float[] newPosition){
