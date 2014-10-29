@@ -27,12 +27,12 @@ public class GunShip extends Ship {
    protected void calculateDestination(TargetShooterGame game){
       
       if(movingDown){
-         Destination = new float[]{Position[0],surfaceHeight};
+         super.calculateDestination(game);
       }else{
          Destination = new float[]{Position[0],-10};
       }
       
-      super.calculateDestination(game);
+      
       
       if(Position[1] > surfaceHeight * (2.0/3.0)){
          movingDown = false;
