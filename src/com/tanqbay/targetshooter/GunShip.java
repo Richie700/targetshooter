@@ -3,7 +3,8 @@ package com.tanqbay.targetshooter;
 public class GunShip extends Ship {
    
    private LaserBank laserBank;
-   
+   private boolean movingDown = true;
+      
    public GunShip(DrawingSurface drawingSurface) {
       super(drawingSurface);
       
@@ -20,6 +21,27 @@ public class GunShip extends Ship {
       
       laserBank.updateTime(timeDifference);
       		   
-      	laserBank.fire(drawingSurface,new double[]{(double) getPosition()[0],(double) getPosition()[1]},Math.PI);
+      laserBank.fire(drawingSurface,new double[]{(double) getPosition()[0],(double) getPosition()[1]},Math.PI);
    }
+   
+   protected void calculateDestination(TargetShooterGame game){
+      
+      if(movingDown){
+         Destination = new float[]{Position[0],surfaceHeight};
+      }else{
+         Destination = new float[]{Position[0],-10};
+      }
+      
+      super.calculateDestination(game);
+      
+      if(Position[1] > surfaceHeight * (2.0/3.0)){
+         movingDown = false;
+      }
+      
+      if(Position[1] < 0){
+         movingDown = true;
+      }
+       
+    }
+	
 }

@@ -18,10 +18,8 @@ public class Target extends GameItem {
 	protected float[] Position;
 	protected float radius;
 	protected float hitDifficultyModifier = 20;
-	//private float actualRadius = 50;
-	protected boolean hit = false;
+
 	protected boolean reachedBottom = false;
-	//protected float speed;
 	protected float startY = -50;
 	
 	
@@ -115,13 +113,7 @@ public class Target extends GameItem {
 		   Item item = friends.get(i);
 		   
 		   if(collisionDetected(item)){
-		      //if(item.getType() == WEAPONFIRE_TYPE){
-		      //   setReadyToBeRemoved(true);
-		      //   item.setReadyToBeRemoved(true);
-		      //   game.addHit();
-		      //}else{
-		         avoidCollision(item);
-		      //}
+		      avoidCollision(item);
 		   }
 		}
 	}
@@ -159,15 +151,7 @@ public class Target extends GameItem {
 	}
 	
 	public boolean pointInside(double[] point){
-		return distance(point[0],point[1],Position[0],Position[1]) < radius + hitDifficultyModifier;
-	}
-	
-	public void setHit(){
-		hit = true;
-	}
-	
-	public boolean getHit(){
-		return hit;
+		return distance(point[0],point[1],Position[0],Position[1]) < radius;
 	}
 	
 	public void setReachedBottom(TargetShooterGame game){

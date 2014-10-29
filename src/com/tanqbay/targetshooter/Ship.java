@@ -15,15 +15,15 @@ public class Ship extends SmartTarget {
 	
 	
 	public Ship(DrawingSurface drawingSurface) {
-		super(drawingSurface);
-		
-		collisionDamage = 10;
- collisionDamageDealt = 10;
-		
-		Velocity = new float[]{0,0};
-		Acceleration = new float[]{0,0};
-		
-		shipImage = BitmapFactory.decodeResource(drawingSurface.getContext().getResources(),R.drawable.ship1);
+	   super(drawingSurface);
+	   
+	   collisionDamage = 10;
+	   collisionDamageDealt = 10;
+	   
+	   Velocity = new float[]{0,0};
+	   Acceleration = new float[]{0,0};
+	   
+	   shipImage = BitmapFactory.decodeResource(drawingSurface.getContext().getResources(),R.drawable.ship1);
 		
 	}
 	

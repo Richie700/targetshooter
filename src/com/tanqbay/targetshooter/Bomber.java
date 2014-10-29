@@ -89,10 +89,6 @@ public class Bomber extends Ship {
 		
 	}
 	
-	public void setHit(TargetShooterGame game){
-		super.setHit();
-		dropBomb(game);
-	}
 	
 	private void dropBomb(TargetShooterGame game){
 		if(timeSinceLastDrop >= bombDropRate && bombs.size() > 0){
