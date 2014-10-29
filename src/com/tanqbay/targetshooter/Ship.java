@@ -28,7 +28,7 @@ public class Ship extends SmartTarget {
 	}
 	
 	public void drawSelf(Canvas canvas){
-		if(!hit){
+		
 			
 			RectF rect = new RectF(-radius,-radius,radius,radius);
 			
@@ -44,7 +44,7 @@ public class Ship extends SmartTarget {
 			
 			canvas.restore(); 
 			 
-		}
+		
 	}
 	
 	public void update(double timeDifference,DrawingSurface drawingSurface){
