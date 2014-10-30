@@ -24,6 +24,15 @@ public class GunShip extends Ship {
       laserBank.fire(drawingSurface,new double[]{(double) getPosition()[0],(double) getPosition()[1]},Math.PI);
    }
    
+   protected void calculateDestinationRotation(){
+		    if(movingDown){
+		       destinationRotation = (float) (2 * Math.PI);   
+		    }else{
+		       destinationRotation = (float) 0;
+		    }
+		 
+		 }
+   
    protected void calculateDestination(TargetShooterGame game){
       
       if(movingDown){
