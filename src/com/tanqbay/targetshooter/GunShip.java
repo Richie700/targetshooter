@@ -26,7 +26,7 @@ public class GunShip extends Ship {
    
    protected void calculateDestinationRotation(){
 		    if(movingDown){
-		       destinationRotation = (float) (2 * Math.PI);   
+		       destinationRotation = (float) (Math.PI);   
 		    }else{
 		       destinationRotation = (float) 0;
 		    }
