@@ -1,4 +1,6 @@
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes.dex : \
+/home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/TargetShooterGame.class \
+/home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/GunShip.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/Item.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/Bomber.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/R$id.class \
@@ -8,6 +10,8 @@
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/MainActivity.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/R$attr.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/Wave.class \
+/home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/Game.class \
+/home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/Menu.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/BuildConfig.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/Ship.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/DebugNotifier.class \
@@ -18,15 +22,19 @@
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/R$menu.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/R$string.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/R$layout.class \
+/home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/MenuItem.class \
+/home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/GameItem.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/Bomb.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/LoseDisplay.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/LaserBeam.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/Target.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/AnimationThread.class \
+/home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/SimpleMotionEvent.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/SmartTarget.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/R$drawable.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/PauseButton.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/R$dimen.class \
+/home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/LaserBank.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/Item$1.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/Gun.class \
 /home/matt/Dropbox/workspace/TargetShooter/bin/classes/com/tanqbay/targetshooter/R$style.class \
