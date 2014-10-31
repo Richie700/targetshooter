@@ -4,9 +4,13 @@ public class GunShip extends Ship {
    
    private LaserBank laserBank;
    private boolean movingDown = true;
-      
+   private Random rand;
+   private float xDestination = 0;
+    
    public GunShip(DrawingSurface drawingSurface) {
       super(drawingSurface);
+      
+      rand = new Random();
       
       collisionDamage = 10;
       collisionDamageDealt = 10;
@@ -38,16 +42,18 @@ public class GunShip extends Ship {
       if(movingDown){
          super.calculateDestination(game);
       }else{
-         Destination = new float[]{Position[0],-10};
+         
+         Destination = new float[]{xDestination,surfaceHeight / 7.0};
       }
       
       
       
       if(Position[1] > surfaceHeight * (2.0/3.0)){
          movingDown = false;
+         xDestination = rand.nextFloat() * surfaceWidth;
       }
       
-      if(Position[1] < 0){
+      if(Position[1] < surfaceHeight / 6.0){
          movingDown = true;
       }
        
