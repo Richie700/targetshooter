@@ -1,5 +1,7 @@
 package com.tanqbay.targetshooter;
 
+import java.util.Random;
+
 public class GunShip extends Ship {
    
    private LaserBank laserBank;
@@ -43,7 +45,7 @@ public class GunShip extends Ship {
          super.calculateDestination(game);
       }else{
          
-         Destination = new float[]{xDestination,surfaceHeight / 7.0};
+         Destination = new float[]{xDestination,(float) (surfaceHeight / 7.0)};
       }
       
       
