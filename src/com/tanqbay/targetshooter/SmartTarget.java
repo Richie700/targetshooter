@@ -32,9 +32,9 @@ public class SmartTarget extends Target {
 	public void update(double timeDifference,DrawingSurface drawingSurface){
 		super.update(timeDifference,drawingSurface);
 			
-		calculateDestinationRotation();
 		calculateDestination((TargetShooterGame) drawingSurface.getGame());
-			
+		calculateDestinationRotation();
+		
 		if(Math.abs(rotation - destinationRotation) > Epsilon){
 		   if(destinationRotation > rotation){
 		      rotation += 0.03;
