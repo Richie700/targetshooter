@@ -18,7 +18,7 @@ public class GunShip extends Ship {
       collisionDamageDealt = 10;
       
       
-      radius = 45;
+      radius = 40;
       
       laserBank = new LaserBank(true,200,5.0);
    }
