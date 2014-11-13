@@ -18,7 +18,6 @@ public class SmartTarget extends Target {
 	private float Epsilon = (float) 0.01;
 	//private float actualMaxAcceleration = 1000;
 	// Some new comment
-	// More comments
 	
 	protected float rotation;
 	protected float destinationRotation;
