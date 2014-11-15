@@ -16,9 +16,6 @@ public class SmartTarget extends Target {
 	
 	private float laserTooClose = 250;
 	private float Epsilon = (float) 0.01;
-	//private float actualMaxAcceleration = 1000;
-	// Some new comment
-	// Something different
 	
 	protected float rotation;
 	protected float destinationRotation;
@@ -52,7 +49,7 @@ public class SmartTarget extends Target {
 		
 		if(Float.isNaN(destinationRotation)){
 			destinationRotation = (float) Math.acos((Position[1] - Destination[1]) / (Position[0] - Destination[0]));
-			if(Destination[0] < Position[0]){
+			if(Destination[0] < Position[0] | Destination[1] < Position[1]){
 				destinationRotation = destinationRotation + (float) Math.PI;
 			}
 		}
