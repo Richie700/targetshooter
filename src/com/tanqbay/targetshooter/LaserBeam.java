@@ -44,17 +44,17 @@ public class LaserBeam extends GameItem {
 		   setReadyToBeRemoved(true);
 		}
 			
-			length =  actualLength * ((currentStart[1])/start[1]);
-			width =  actualWidth * ((currentStart[1])/start[1]);
-			
-			double XChange = -1 * (FloatMath.sin((float) angle) * speed * timeDifference);
-			double YChange = -1 * (FloatMath.cos((float) angle) * speed * timeDifference);
-			
-			currentEnd = new double[]{(currentEnd[0] + XChange),(currentEnd[1] + YChange)};
-			
-			if(distance(currentStart[0],currentStart[1],currentEnd[0],currentEnd[1]) > length){
-				currentStart = new double[]{(currentStart[0] + XChange),(currentStart[1] + YChange)};
-			}
+		length =  actualLength * ((range - getDistanceTraveled()) / range);
+		width =  actualWidth * ((range - getDistanceTraveled()) / range);
+		
+		double XChange = -1 * (FloatMath.sin((float) angle) * speed * timeDifference);
+		double YChange = -1 * (FloatMath.cos((float) angle) * speed * timeDifference);
+		
+		currentEnd = new double[]{(currentEnd[0] + XChange),(currentEnd[1] + YChange)};
+		
+		if(distance(currentStart[0],currentStart[1],currentEnd[0],currentEnd[1]) > length){
+			currentStart = new double[]{(currentStart[0] + XChange),(currentStart[1] + YChange)};
+		}
 		
 	}
 	
@@ -72,9 +72,13 @@ public class LaserBeam extends GameItem {
 	}
 	
 	public boolean reachedLimit(){
-		return distance(start[0],start[1],currentEnd[0],currentEnd[1]) > range;
+		return getDistanceTraveled() > range;
 	}
 	
+	private float getDistanceTraveled(){
+		return distance(start[0],start[1],currentEnd[0],currentEnd[1]);
+	}
+
 	public double[] getEnd(){
 		return currentEnd;
 	}

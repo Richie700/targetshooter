@@ -60,7 +60,8 @@ public class SmartTarget extends Target {
 			destinationRotation = destinationRotation - (float) (2 * Math.PI);
 		}
 	}
-	
+
+
 	protected void calculateDestination(TargetShooterGame game){
 		
 		Destination = new float[]{Position[0],surfaceHeight + radius};
